@@ -33,8 +33,7 @@ class User extends Model
      *
      * @var array
      */
-    protected $hidden = ['pass', 'last_get_gift_time', 'last_rest_pass_time',
-        'reg_ip', 'is_email_verify', 'ref_by' ];
+    protected $hidden = ['pass', 'last_get_gift_time', 'last_rest_pass_time', 'is_email_verify', 'ref_by' ];
 
     public function getGravatarAttribute()
     {

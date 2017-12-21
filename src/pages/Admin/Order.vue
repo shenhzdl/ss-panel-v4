@@ -3,7 +3,7 @@
     <div class="content-padder content-background">
         <div class="uk-section-small uk-section-default header">
             <div class="uk-container uk-container-large">
-                <h3><span class="ion-speedometer"></span> {{ $t("user-nav.traffic-log") }} </h3>
+                <h3><span class="ion-speedometer"></span> {{$t("admin-nav.orders")}} </h3>
             </div>
         </div>
         <div class="uk-section-small">
@@ -12,26 +12,28 @@
                     <div class="uk-card uk-card-default uk-card-body">
                         <table class="uk-table uk-table-striped">
                             <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>{{$t("ss.node")}}</th>
-                                <th>{{$t("ss.traffic_rate")}}</th>
-                                <th>Traffic</th>
-                                <th>time</th>
-                            </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{{$t("order.user-id")}}</th>
+                                    <th>{{$t("order.tradeno")}}</th>
+                                    <th>{{$t("order.total")}}</th>
+                                    <th>{{$t("order.renew")}}</th>
+                                    <th>{{$t("order.time")}}</th>
+                                    <th>{{$t("order.method")}}</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr v-for="log in data.data">
-                                <td>#{{log.id}}</td>
-                                <td>{{log.name}}</td>
-                                <td>{{log.rate}}</td>
-                                <td>{{ bytesToSize(log.u + log.d) }}</td>
-                                <td>{{ timeFormat(log.log_time) }}</td>
-                            </tr>
+                                <tr v-for="c in data.data">
+                                    <td>#{{c.id}}</td>
+                                    <td>{{c.user_id}}</td>
+                                    <td>{{c.tradeno}}</td>
+                                    <td>{{c.total}}</td>
+                                    <td>{{c.renew}}个月</td>
+                                    <td>{{timeFormat(c.datetime)}}</td>
+                                    <td>{{c.method}}</td>
+                                </tr>
                             </tbody>
                         </table>
-
-
                         <pagination :data="data" v-on:pagination-change-page="Results"></pagination>
                     </div>
                 </div>
@@ -43,12 +45,13 @@
 </template>
 
 <script>
-    import axios from 'axios'
-    import rest from '../http/rest'
+    import admin from '../../http/admin'
     import pagination from 'laravel-vue-pagination-uikit'
-    import {bytesToSize} from '../tools/util'
-    export default {
-        name: 'TrafficLog',
+    import {notify} from '../../tools/util'
+
+    export default
+    {
+        name: 'Orders',
         components: {
             pagination,
         },
@@ -63,19 +66,17 @@
                     page = 1;
                 }
 
-                rest.get(`trafficLogs?page=` + page)
+                admin.get(`orders?page=` + page)
                     .then(response => {
                         this.data = response.data;
                         this.logs = response.data.data;
                     })
                     .catch(e => {
-                        this.errors.push(e)
                     })
             },
             timeFormat(ut){
-                return new Date(ut * 1e3).toLocaleString();
+                return new Date(ut * 1e3).toLocaleDateString();
             },
-            bytesToSize,
         },
         mounted: function () {
             this.Results();

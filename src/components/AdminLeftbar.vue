@@ -19,6 +19,18 @@
             </li>
 
             <li class="uk-nav">
+                <router-link tag="li" :to="{ name: 'users' }" exact><a href="#"><span class="uk-margin-small-right"
+                                                                                       uk-icon="icon: users"></span>
+                    {{ $t("nav.user") }} </a></router-link>
+            </li>
+
+            <li class="uk-nav">
+                <router-link tag="li" :to="{ name: 'orders' }" exact><a href="#"><span class="uk-margin-small-right"
+                                                                                       uk-icon="icon: credit-card"></span>
+                    {{ $t("admin-nav.orders") }} </a></router-link>
+            </li>
+
+            <li class="uk-nav">
                 <router-link tag="li" :to="{ name: 'invites' }" exact><a href="#"><span class="uk-margin-small-right"
                                                                                       uk-icon="icon: nut"></span>
                     {{$t("nav.invite-code")}}</a></router-link>

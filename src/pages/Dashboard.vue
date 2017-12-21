@@ -42,12 +42,29 @@
                                 {{$t("user-index.checkin")}}
                             </div>
                             <div class="uk-card-body">
-                                <p>{{$t("user-index.last-checkin-at")}}: <em>{{$store.state.user.checkIn.lastCheckInTime}}</em>
-                                </p>
-                                <p v-if="$store.state.user.checkIn.canCheckIn">
-                                    <button class="uk-button uk-button-primary" @click="checkIn">
+                                <p>
+                                    {{$t("user-index.last-checkin-at")}}: 
+                                    <em>{{$store.state.user.checkIn.lastCheckInTime}}</em>
+                                    <button v-if="$store.state.user.checkIn.canCheckIn" class="uk-margin-left uk-button uk-button-primary" @click="checkIn">
                                         {{$t("user-index.checkin")}}
                                     </button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="uk-card uk-card-default uk-margin-top">
+                            <div class="uk-card-header">
+                                <span class="uk-margin-small-right" uk-icon="icon: cart"></span>
+                                {{$t("user-index.recharge")}}
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    {{$t("user-info.expire-time")}}: 
+                                    <em>{{timeFormat($store.state.user.data.expire_time)}}</em>
+                                    <router-link :to="{ name: 'recharge'}" exact>
+                                        <button class="uk-margin-left uk-button uk-button-primary">
+                                            {{$t("user-index.recharge")}}
+                                        </button>
+                                    </router-link>
                                 </p>
                             </div>
                         </div>
@@ -104,6 +121,9 @@
 
                 console.log("check in");
                 this.$store.state.user.checkIn.canCheckIn = false;
+            },
+            timeFormat(ut){
+                return new Date(ut * 1e3).toLocaleDateString();
             },
         },
         mounted: function () {

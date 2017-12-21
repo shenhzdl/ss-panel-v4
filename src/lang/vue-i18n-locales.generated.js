@@ -4,6 +4,7 @@ export default {
             "nodes": "Nodes",
             "config": "Config",
             "users": "Users",
+            "orders":"Order",
             "mail-setting": "Mail Setting"
         },
         "admin": {
@@ -19,7 +20,8 @@ export default {
             "traffic-total": "Total Traffic",
             "mailgun-key": "Mailgun Key",
             "mailgun-domain": "Mailgun Domain",
-            "mailgun-sender": "Mailgun Sender"
+            "mailgun-sender": "Mailgun Sender",
+            "add-order":"Add Order"
         },
         "alert": {
             "success": "Success",
@@ -60,8 +62,10 @@ export default {
             "something-wrong": "Some Wrong!",
             "system-error": "System Error",
             "setting": "Setting",
+            "document":"Document",
             "update": "Update",
             "never": "Never",
+            "search": "Search",
             "app-name": "App Name",
             "app-uri": "Site Url",
             "checkInMax": "Check-In Max Traffic",
@@ -111,6 +115,7 @@ export default {
             "announcement": "Announcement",
             "faq": "FAQ",
             "checkin": "Check-In",
+            "recharge": "Recharge",
             "checkin-des": "You can checkin in each %s hour.",
             "cant-checkin": "Cant't Check-In",
             "last-checkin-at": "Last check-in at",
@@ -133,6 +138,33 @@ export default {
             "invite-friend": "Invite Friend",
             "admin-panel": "Admin Panel",
             "join-at": "Join At"
+        },
+        "user-info":
+        {
+            "user-name":"User Name",
+            "email":"E-Mail",
+            "passwd":"SS Password",
+            "port":"Port",
+            "method":"Method",
+            "protocal":"Protocal",
+            "obfs":"Obfs",
+            "invite-num":"Invite Number",
+            "transfer-upload":"Transfer Upload",
+            "transfer-download":"Transfer Download",
+            "transfer-enable":"Transfer Enable",
+            "expire-time":"Expire Time",
+            "enable":"Enable",
+            "reg-ip":"Register IP"
+        },
+        "order":
+        {
+            "user-id":"User ID",
+            "order":"Order",
+            "tradeno":"Trade No.",
+            "total":"Total",
+            "renew":"Renew",
+            "time":"Time",
+            "method":"Pay Method"
         }
     },
     "zh_cn": {
@@ -140,6 +172,7 @@ export default {
             "nodes": "节点",
             "config": "配置",
             "users": "用户",
+            "orders":"订单",
             "mail-setting": "邮件配置"
         },
         "admin": {
@@ -152,7 +185,8 @@ export default {
             "home-message": "首页消息公告",
             "users-total": "总用户",
             "nodes-total": "节点数量",
-            "traffic-total": "产生流量"
+            "traffic-total": "产生流量",
+            "add-order":"创建订单"
         },
         "alert": {
             "success": "成功!",
@@ -196,6 +230,7 @@ export default {
             "setting": "设置",
             "update": "更新",
             "never": "从不",
+            "search": "搜索",
             "app-name": "站点名",
             "app-uri": "网站地址",
             "checkInMax": "签到最多流量",
@@ -245,6 +280,7 @@ export default {
             "announcement": "公告",
             "faq": "常见问题",
             "checkin": "签到",
+            "recharge": "充值",
             "checkin-des": "每 %s 小时可以签到一次。",
             "cant-checkin": "无法签到",
             "last-checkin-at": "上次签到时间",
@@ -265,8 +301,35 @@ export default {
             "traffic-log": "流量日志",
             "edit-profile": "编辑",
             "invite-friend": "邀请好友",
+            "document":"使用手册",
             "admin-panel": "管理面板",
             "join-at": "加入于"
+        },
+        "user-info":
+        {
+            "user-name":"用户名",
+            "email":"电子邮箱",
+            "passwd":"SS密码",
+            "port":"端口号",
+            "method":"加密方式",
+            "protocal":"协议插件",
+            "obfs":"混淆插件",
+            "invite-num":"邀请码数",
+            "transfer-upload":"上传流量",
+            "transfer-download":"下载流量",
+            "transfer-enable":"总流量",
+            "expire-time":"到期时间",
+            "enable":"是否激活",
+            "reg-ip":"注册IP"
+        },
+        "order":
+        {
+            "user-id":"用户ID",
+            "tradeno":"订单号",
+            "total":"金额",
+            "renew":"续费时长",
+            "time":"订单时间",
+            "method":"付款方式"
         }
     }
 }

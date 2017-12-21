@@ -7,6 +7,8 @@ import Config from './pages/Admin/Config.vue'
 import Node from './pages/Admin/Node.vue'
 import NodeAdd from './pages/Admin/NodeAdd.vue'
 import User from './pages/Admin/User.vue'
+import Order from './pages/Admin/Order.vue'
+import OrderAdd from './pages/Admin/OrderAdd.vue'
 import Invite from './pages/Admin/Invite.vue'
 import InviteAdd from './pages/Admin/InviteAdd.vue'
 import TrafficLog from './pages/Admin/TrafficLog.vue'
@@ -29,6 +31,8 @@ const routes = [
     {path: '/admin/invites/create', name: 'invite-add', component: InviteAdd},
     {path: '/admin/trafficLogs', name: 'trafficLogs', component: TrafficLog},
     {path: '/admin/users', name: 'users', component: User},
+    {path: '/admin/orders', name: 'orders', component: Order},
+    {path: '/admin/orderadd', name: 'orderadd', component: OrderAdd},
 ];
 
 const router = new VueRouter({

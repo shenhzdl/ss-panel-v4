@@ -8,7 +8,7 @@
         </div>
         <div class="uk-section-small">
             <div class="uk-container uk-container-large">
-                <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-4@xl">
+                <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m">
                     <div class="uk-card uk-card-default uk-card-body">
 
                         <div class="uk-margin">
@@ -25,7 +25,7 @@
                                 <input class="uk-input" id="form-horizontal-text" type="text"
                                        v-model="appUri">
                             </div>
-                        </div>
+                        </div><div class="uk-container uk-container-large">
 
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-horizontal-text">{{$t("base.checkInMin")}}</label>
@@ -81,8 +81,8 @@
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-horizontal-text">{{$t("admin.home-message")}}</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input" id="form-horizontal-text" type="text"
-                                       v-model="homeMessage">
+                                <textarea class="uk-textarea" rows="5" id="form-horizontal-text"
+                                       v-model="homeMessage"></textarea>
                             </div>
                         </div>
 

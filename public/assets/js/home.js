@@ -167,7 +167,7 @@ module.exports = function normalizeComponent (
 "use strict";
 
 
-var bind = __webpack_require__(22);
+var bind = __webpack_require__(24);
 
 /*global toString:true*/
 
@@ -491,7 +491,7 @@ module.exports = __webpack_require__(58);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(9);
 
 
 
@@ -512,7 +512,7 @@ var token = sessionStorage.getItem('token');
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(9);
 
 
 
@@ -538,7 +538,7 @@ if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(11)(function(){
+module.exports = !__webpack_require__(12)(function(){
   return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 });
 
@@ -547,9 +547,48 @@ module.exports = !__webpack_require__(11)(function(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bytesToSize; });
+/* unused harmony export timeFormat */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return notify; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getLang; });
+var bytesToSize = function bytesToSize(bytes) {
+    if (bytes === 0) return '0 B';
+    var k = 1000,
+        // or 1024
+    sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+        i = Math.floor(Math.log(bytes) / Math.log(k));
+    return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+};
+
+var timeFormat = function timeFormat(t) {};
+
+var notify = function notify(message, status) {
+    UIkit.notification({
+        message: message,
+        status: status,
+        pos: 'top-center',
+        timeout: 5000
+    });
+};
+
+var getLang = function getLang() {
+    var lang = navigator.language || navigator.userLanguage;
+    switch (lang) {
+        case 'zh-CN':
+            return 'zh_cn';
+        default:
+            return 'en';
+    }
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__types__ = __webpack_require__(2);
@@ -592,7 +631,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vuex
 }));
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -601,7 +640,7 @@ var global = module.exports = typeof window != 'undefined' && window.Math == Mat
 if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = function(it){
@@ -609,7 +648,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = function(exec){
@@ -621,7 +660,7 @@ module.exports = function(exec){
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10320,7 +10359,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10344,10 +10383,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(23);
+    adapter = __webpack_require__(25);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(23);
+    adapter = __webpack_require__(25);
   }
   return adapter;
 }
@@ -10421,46 +10460,9 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(60)))
 
 /***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return bytesToSize; });
-/* unused harmony export timeFormat */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return notify; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getLang; });
-var bytesToSize = function bytesToSize(bytes) {
-    if (bytes === 0) return '0 B';
-    var k = 1000,
-        // or 1024
-    sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-        i = Math.floor(Math.log(bytes) / Math.log(k));
-    return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
-};
-
-var timeFormat = function timeFormat(t) {};
-
-var notify = function notify(message, status) {
-    UIkit.notification({
-        message: message,
-        status: status,
-        pos: 'top-center',
-        timeout: 5000
-    });
-};
-
-var getLang = function getLang() {
-    var lang = navigator.language || navigator.userLanguage;
-    switch (lang) {
-        case 'zh-CN':
-            return 'zh_cn';
-        default:
-            return 'en';
-    }
-};
-
-/***/ }),
-/* 15 */
+/* 15 */,
+/* 16 */,
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10491,7 +10493,7 @@ var EmailNotExist = 901;
 var LinkExpired = 902;
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -10501,18 +10503,18 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = __webpack_require__(39)
-  , defined = __webpack_require__(16);
+  , defined = __webpack_require__(18);
 module.exports = function(it){
   return IObject(defined(it));
 };
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -10523,10 +10525,10 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global    = __webpack_require__(9)
+var global    = __webpack_require__(10)
   , core      = __webpack_require__(6)
   , ctx       = __webpack_require__(49)
   , hide      = __webpack_require__(51)
@@ -10589,7 +10591,7 @@ $export.R = 128; // real proto method for `library`
 module.exports = $export;
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(52)
@@ -10610,7 +10612,7 @@ exports.f = __webpack_require__(7) ? Object.defineProperty : function defineProp
 };
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13122,7 +13124,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13140,7 +13142,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13151,7 +13153,7 @@ var settle = __webpack_require__(62);
 var buildURL = __webpack_require__(64);
 var parseHeaders = __webpack_require__(65);
 var isURLSameOrigin = __webpack_require__(66);
-var createError = __webpack_require__(24);
+var createError = __webpack_require__(26);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(67);
 
 module.exports = function xhrAdapter(config) {
@@ -13324,7 +13326,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13348,7 +13350,7 @@ module.exports = function createError(message, config, code, response) {
 
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13360,7 +13362,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13386,7 +13388,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -13402,7 +13404,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/components/Lang.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\components\\Lang.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Lang.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -13426,7 +13428,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13446,8 +13448,6 @@ var Locales = {
 };
 
 /***/ }),
-/* 29 */,
-/* 30 */,
 /* 31 */
 /***/ (function(module, exports) {
 
@@ -13506,7 +13506,7 @@ __webpack_require__(48)('keys', function(){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(16);
+var defined = __webpack_require__(18);
 module.exports = function(it){
   return Object(defined(it));
 };
@@ -13528,7 +13528,7 @@ module.exports = Object.keys || function keys(O){
 /***/ (function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(38)
-  , toIObject    = __webpack_require__(17)
+  , toIObject    = __webpack_require__(19)
   , arrayIndexOf = __webpack_require__(41)(false)
   , IE_PROTO     = __webpack_require__(44)('IE_PROTO');
 
@@ -13580,7 +13580,7 @@ module.exports = function(it){
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(17)
+var toIObject = __webpack_require__(19)
   , toLength  = __webpack_require__(42)
   , toIndex   = __webpack_require__(43);
 module.exports = function(IS_INCLUDES){
@@ -13605,7 +13605,7 @@ module.exports = function(IS_INCLUDES){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(18)
+var toInteger = __webpack_require__(20)
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -13615,7 +13615,7 @@ module.exports = function(it){
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(18)
+var toInteger = __webpack_require__(20)
   , max       = Math.max
   , min       = Math.min;
 module.exports = function(index, length){
@@ -13637,7 +13637,7 @@ module.exports = function(key){
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(9)
+var global = __webpack_require__(10)
   , SHARED = '__core-js_shared__'
   , store  = global[SHARED] || (global[SHARED] = {});
 module.exports = function(key){
@@ -13668,9 +13668,9 @@ module.exports = (
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
-var $export = __webpack_require__(19)
+var $export = __webpack_require__(21)
   , core    = __webpack_require__(6)
-  , fails   = __webpack_require__(11);
+  , fails   = __webpack_require__(12);
 module.exports = function(KEY, exec){
   var fn  = (core.Object || {})[KEY] || Object[KEY]
     , exp = {};
@@ -13716,7 +13716,7 @@ module.exports = function(it){
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP         = __webpack_require__(20)
+var dP         = __webpack_require__(22)
   , createDesc = __webpack_require__(56);
 module.exports = __webpack_require__(7) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
@@ -13729,7 +13729,7 @@ module.exports = __webpack_require__(7) ? function(object, key, value){
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(10);
+var isObject = __webpack_require__(11);
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
@@ -13739,7 +13739,7 @@ module.exports = function(it){
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(7) && !__webpack_require__(11)(function(){
+module.exports = !__webpack_require__(7) && !__webpack_require__(12)(function(){
   return Object.defineProperty(__webpack_require__(54)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
 
@@ -13747,8 +13747,8 @@ module.exports = !__webpack_require__(7) && !__webpack_require__(11)(function(){
 /* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(10)
-  , document = __webpack_require__(9).document
+var isObject = __webpack_require__(11)
+  , document = __webpack_require__(10).document
   // in old IE typeof document.createElement is 'object'
   , is = isObject(document) && isObject(document.createElement);
 module.exports = function(it){
@@ -13760,7 +13760,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(10);
+var isObject = __webpack_require__(11);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function(it, S){
@@ -14807,9 +14807,9 @@ module.exports = plugin;
 
 
 var utils = __webpack_require__(1);
-var bind = __webpack_require__(22);
+var bind = __webpack_require__(24);
 var Axios = __webpack_require__(59);
-var defaults = __webpack_require__(13);
+var defaults = __webpack_require__(14);
 
 /**
  * Create an instance of Axios
@@ -14842,9 +14842,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(26);
+axios.Cancel = __webpack_require__(28);
 axios.CancelToken = __webpack_require__(74);
-axios.isCancel = __webpack_require__(25);
+axios.isCancel = __webpack_require__(27);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -14865,7 +14865,7 @@ module.exports.default = axios;
 "use strict";
 
 
-var defaults = __webpack_require__(13);
+var defaults = __webpack_require__(14);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(69);
 var dispatchRequest = __webpack_require__(70);
@@ -15166,7 +15166,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(24);
+var createError = __webpack_require__(26);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -15582,8 +15582,8 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(71);
-var isCancel = __webpack_require__(25);
-var defaults = __webpack_require__(13);
+var isCancel = __webpack_require__(27);
+var defaults = __webpack_require__(14);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -15733,7 +15733,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(26);
+var Cancel = __webpack_require__(28);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -15831,7 +15831,7 @@ module.exports = function spread(callback) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_types__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lang__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lang__ = __webpack_require__(30);
 //
 //
 //
@@ -15878,6 +15878,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "nodes": "Nodes",
             "config": "Config",
             "users": "Users",
+            "orders": "Order",
             "mail-setting": "Mail Setting"
         },
         "admin": {
@@ -15893,7 +15894,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "traffic-total": "Total Traffic",
             "mailgun-key": "Mailgun Key",
             "mailgun-domain": "Mailgun Domain",
-            "mailgun-sender": "Mailgun Sender"
+            "mailgun-sender": "Mailgun Sender",
+            "add-order": "Add Order"
         },
         "alert": {
             "success": "Success",
@@ -15934,8 +15936,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "something-wrong": "Some Wrong!",
             "system-error": "System Error",
             "setting": "Setting",
+            "document": "Document",
             "update": "Update",
             "never": "Never",
+            "search": "Search",
             "app-name": "App Name",
             "app-uri": "Site Url",
             "checkInMax": "Check-In Max Traffic",
@@ -15985,6 +15989,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "announcement": "Announcement",
             "faq": "FAQ",
             "checkin": "Check-In",
+            "recharge": "Recharge",
             "checkin-des": "You can checkin in each %s hour.",
             "cant-checkin": "Cant't Check-In",
             "last-checkin-at": "Last check-in at",
@@ -16007,6 +16012,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "invite-friend": "Invite Friend",
             "admin-panel": "Admin Panel",
             "join-at": "Join At"
+        },
+        "user-info": {
+            "user-name": "User Name",
+            "email": "E-Mail",
+            "passwd": "SS Password",
+            "port": "Port",
+            "method": "Method",
+            "protocal": "Protocal",
+            "obfs": "Obfs",
+            "invite-num": "Invite Number",
+            "transfer-upload": "Transfer Upload",
+            "transfer-download": "Transfer Download",
+            "transfer-enable": "Transfer Enable",
+            "expire-time": "Expire Time",
+            "enable": "Enable",
+            "reg-ip": "Register IP"
+        },
+        "order": {
+            "user-id": "User ID",
+            "order": "Order",
+            "tradeno": "Trade No.",
+            "total": "Total",
+            "renew": "Renew",
+            "time": "Time",
+            "method": "Pay Method"
         }
     },
     "zh_cn": {
@@ -16014,6 +16044,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "nodes": "节点",
             "config": "配置",
             "users": "用户",
+            "orders": "订单",
             "mail-setting": "邮件配置"
         },
         "admin": {
@@ -16026,7 +16057,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "home-message": "首页消息公告",
             "users-total": "总用户",
             "nodes-total": "节点数量",
-            "traffic-total": "产生流量"
+            "traffic-total": "产生流量",
+            "add-order": "创建订单"
         },
         "alert": {
             "success": "成功!",
@@ -16070,6 +16102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "setting": "设置",
             "update": "更新",
             "never": "从不",
+            "search": "搜索",
             "app-name": "站点名",
             "app-uri": "网站地址",
             "checkInMax": "签到最多流量",
@@ -16119,6 +16152,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "announcement": "公告",
             "faq": "常见问题",
             "checkin": "签到",
+            "recharge": "充值",
             "checkin-des": "每 %s 小时可以签到一次。",
             "cant-checkin": "无法签到",
             "last-checkin-at": "上次签到时间",
@@ -16139,8 +16173,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "traffic-log": "流量日志",
             "edit-profile": "编辑",
             "invite-friend": "邀请好友",
+            "document": "使用手册",
             "admin-panel": "管理面板",
             "join-at": "加入于"
+        },
+        "user-info": {
+            "user-name": "用户名",
+            "email": "电子邮箱",
+            "passwd": "SS密码",
+            "port": "端口号",
+            "method": "加密方式",
+            "protocal": "协议插件",
+            "obfs": "混淆插件",
+            "invite-num": "邀请码数",
+            "transfer-upload": "上传流量",
+            "transfer-download": "下载流量",
+            "transfer-enable": "总流量",
+            "expire-time": "到期时间",
+            "enable": "是否激活",
+            "reg-ip": "注册IP"
+        },
+        "order": {
+            "user-id": "用户ID",
+            "tradeno": "订单号",
+            "total": "金额",
+            "renew": "续费时长",
+            "time": "订单时间",
+            "method": "付款方式"
         }
     }
 });
@@ -16241,9 +16300,9 @@ module.exports = function defineProperty(it, key, desc){
 /* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $export = __webpack_require__(19);
+var $export = __webpack_require__(21);
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__(7), 'Object', {defineProperty: __webpack_require__(20).f});
+$export($export.S + $export.F * !__webpack_require__(7), 'Object', {defineProperty: __webpack_require__(22).f});
 
 /***/ }),
 /* 83 */
@@ -17075,7 +17134,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/Auth/Logout.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\Auth\\Logout.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Logout.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17164,7 +17223,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/components/Leftbar.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\components\\Leftbar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Leftbar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17196,8 +17255,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_types__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Lang_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Lang_vue__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Lang_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Lang_vue__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -17395,7 +17460,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "uk-icon": "icon: settings"
     }
-  }), _vm._v("\n                " + _vm._s(_vm.$t("base.setting")) + " ")])])], 1), _vm._v(" "), (_vm.$store.state.user.data.is_admin) ? _c('li', {
+  }), _vm._v("\n                " + _vm._s(_vm.$t("base.setting")) + " ")])])], 1), _vm._v(" "), _c('li', {
+    staticClass: "uk-nav"
+  }, [_c('router-link', {
+    attrs: {
+      "tag": "li",
+      "to": {
+        name: 'document'
+      },
+      "exact": ""
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('span', {
+    staticClass: "uk-margin-small-right",
+    attrs: {
+      "uk-icon": "icon: copy"
+    }
+  }), _vm._v("\n                " + _vm._s(_vm.$t("user-nav.document")) + " ")])])], 1), _vm._v(" "), (_vm.$store.state.user.data.is_admin) ? _c('li', {
     staticClass: "uk-nav"
   }, [_c('a', {
     attrs: {
@@ -17435,7 +17519,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/Index.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\Index.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Index.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17582,7 +17666,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/Code.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\Code.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Code.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17719,7 +17803,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/Auth/Login.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\Auth\\Login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17750,7 +17834,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_base__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_types__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(17);
 //
 //
 //
@@ -28333,16 +28417,16 @@ module.exports = __webpack_require__(104);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_keys__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_keys___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_keys__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_i18n__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_i18n___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_i18n__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Home_vue__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Home_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__homeRouter__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store___ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__lang__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store___ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__lang__ = __webpack_require__(30);
 
 
 
@@ -28395,7 +28479,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/Home.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\Home.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -28427,11 +28511,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Leftbar_vue__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Leftbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Leftbar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Lang_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Lang_vue__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Lang_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Lang_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__http_rest__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__http_base__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tools_util__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tools_util__ = __webpack_require__(8);
 //
 //
 //
@@ -28767,9 +28851,9 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Index_vue__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_Index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pages_Index_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_Code_vue__ = __webpack_require__(93);
@@ -28832,7 +28916,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/Auth/Register.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\Auth\\Register.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Register.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -28863,7 +28947,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_base__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_types__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(17);
 //
 //
 //
@@ -29287,7 +29371,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/Password.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\Password.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Password.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29318,7 +29402,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_base__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_types__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(17);
 //
 //
 //
@@ -29543,7 +29627,7 @@ var Component = __webpack_require__(0)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/home/zxhm/Documents/ss-panel-4.0.0/src/pages/PasswordToken.vue"
+Component.options.__file = "E:\\Projects\\ss-panel-4.0.0\\src\\pages\\PasswordToken.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PasswordToken.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29574,7 +29658,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__http_base__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_types__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__code_auth__ = __webpack_require__(17);
 //
 //
 //

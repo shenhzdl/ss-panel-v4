@@ -14,6 +14,8 @@ import TrafficLog from './pages/TrafficLog.vue'
 import Invite from './pages/Invite.vue'
 import Setting from './pages/Setting.vue'
 import Profile from './pages/Profile.vue'
+import Document from './pages/Document.vue'
+import Recharge from './pages/Recharge.vue'
 
 const routes = [
     {path: '/', name: 'index', component: Index},
@@ -30,6 +32,8 @@ const routes = [
     {path: '/profile', name: 'profile', component: Profile},
     {path: '/invite', name: 'invite', component: Invite},
     {path: '/setting', name: 'setting', component: Setting},
+    {path: '/document', name: 'document', component: Document},
+    {path: '/recharge', name: 'recharge', component: Recharge},
 ];
 
 const router = new VueRouter({

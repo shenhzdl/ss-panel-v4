@@ -73,7 +73,7 @@
                     })
             },
             timeFormat(ut){
-                return new Date(ut * 1e3).toISOString();
+                return new Date(ut * 1e3).toLocaleString();
             },
             bytesToSize,
         },
