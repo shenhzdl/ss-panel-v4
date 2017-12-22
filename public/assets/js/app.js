@@ -32100,7 +32100,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "https://camo.githubusercontent.com/bdaf711a93d64d0bb5e5abfc346a8b84ea47f164/68747470733a2f2f706c61792e676f6f676c652e636f6d2f696e746c2f656e5f75732f6261646765732f696d616765732f67656e657269632f656e2d706c61792d62616467652e706e67",
       "data-canonical-src": "https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
     }
-  })])])])]), _vm._v(" "), _c('li', [_c('h3', {
+  })]), _vm._v("\n                                    或者\n                                    "), _c('a', {
+    staticClass: "uk-link-muted",
+    attrs: {
+      "href": "https://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks"
+    }
+  }, [_vm._v("下载APK")])])])]), _vm._v(" "), _c('li', [_c('h3', {
     staticClass: "uk-accordion-title"
   }, [_vm._v("网站使用手册")]), _vm._v(" "), _c('div', {
     staticClass: "uk-accordion-content"
@@ -32202,6 +32207,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -32263,7 +32283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "uk-card uk-card-default uk-card-body"
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "uk-margin"
   }, [_c('label', {
     staticClass: "uk-form-label",
@@ -32301,7 +32321,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.recharge
     }
   }, [_vm._v("\n                            " + _vm._s(_vm.$t("user-index.recharge")) + "\n                        ")])])])])])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "uk-margin"
+  }, [_c('div', {
+    staticClass: "uk-card-media-top"
+  }, [_c('img', {
+    staticClass: "uk-border-rounded uk-box-shadow-small",
+    attrs: {
+      "src": "/assets/img/zfbqrcode.jpg"
+    }
+  })]), _vm._v(" "), _c('span', [_vm._v("\n                            1个月/10元\n                            "), _c('br'), _vm._v("\n                            3个月/30元\n                            "), _c('br'), _vm._v("\n                            6个月/50元\n                            "), _c('br'), _vm._v("\n                            1年/100元\n                            "), _c('br'), _vm._v("\n                            请支付宝扫码支付后在下面的输入框输入支付订单号，点击充值按钮进行充值\n                        ")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

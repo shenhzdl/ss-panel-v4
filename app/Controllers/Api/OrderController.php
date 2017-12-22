@@ -63,7 +63,7 @@ class OrderController extends BaseController
                 $arr['renew'] = 3;
                 break;
             case '50.0':
-                $arr['renew'] = 5;
+                $arr['renew'] = 6;
                 break;
             case '100.0':
                 $arr['renew'] = 12;

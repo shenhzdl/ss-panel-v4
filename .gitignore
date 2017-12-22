@@ -6,3 +6,6 @@ build/
 composer
 node_modules/
 npm-debug.log
+public/assets/img/zfbqrcode.jpg
+public/assets/img/wxqrcode.jpg
+public/assets/file/com.github.shadowsocks.apk

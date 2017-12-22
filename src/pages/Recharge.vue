@@ -10,7 +10,22 @@
             <div class="uk-container uk-container-large">
                 <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-1@m uk-child-width-1-4@xl">
                     <div class="uk-card uk-card-default uk-card-body">
-
+                        <div class="uk-margin">
+                            <div class="uk-card-media-top">
+                                <img class="uk-border-rounded uk-box-shadow-small" src="/assets/img/zfbqrcode.jpg" >
+                            </div>
+                            <span>
+                                1个月/10元
+                                <br/>
+                                3个月/30元
+                                <br/>
+                                6个月/50元
+                                <br/>
+                                1年/100元
+                                <br/>
+                                请支付宝扫码支付后在下面的输入框输入支付订单号，点击充值按钮进行充值
+                            </span>
+                        </div>
                         <div class="uk-margin">
                             <label class="uk-form-label"
                                    for="form-horizontal-text">{{$t("order.tradeno")}}</label>
