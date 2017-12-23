@@ -33,6 +33,15 @@
 
                         <div class="uk-margin">
                             <label class="uk-form-label"
+                                   for="form-horizontal-text">{{$t("order.amount")}}</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="form-horizontal-text" type="text"
+                                       v-model="amount">
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <label class="uk-form-label"
                                    for="form-horizontal-text">{{$t("order.tradeno")}}</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input" id="form-horizontal-text" type="text"
@@ -85,6 +94,7 @@
                 user_id:this.$route.params.user_id,
                 method:'支付宝',
                 tradeno:'',
+                amount:0,
                 renew:1,
             }
         },
@@ -95,6 +105,7 @@
                 {
                     user_id:this.user_id,
                     method:this.method,
+                    amount:this.amount,
                     tradeno:this.tradeno,
                     renew:this.renew
                 })

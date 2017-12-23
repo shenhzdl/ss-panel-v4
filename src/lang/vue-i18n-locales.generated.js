@@ -154,14 +154,15 @@ export default {
             "transfer-enable":"Transfer Enable",
             "expire-time":"Expire Time",
             "enable":"Enable",
-            "reg-ip":"Register IP"
+            "reg-ip":"Register IP",
+            "reset-enable":"Reset Enable"
         },
         "order":
         {
             "user-id":"User ID",
             "order":"Order",
             "tradeno":"Trade No.",
-            "total":"Total",
+            "amount":"Amount",
             "renew":"Renew",
             "time":"Time",
             "method":"Pay Method"
@@ -320,13 +321,14 @@ export default {
             "transfer-enable":"总流量",
             "expire-time":"到期时间",
             "enable":"是否激活",
-            "reg-ip":"注册IP"
+            "reg-ip":"注册IP",
+            "reset-enable":"设置可用性"
         },
         "order":
         {
             "user-id":"用户ID",
             "tradeno":"订单号",
-            "total":"金额",
+            "amount":"金额",
             "renew":"续费时长",
             "time":"订单时间",
             "method":"付款方式"

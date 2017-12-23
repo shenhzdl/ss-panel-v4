@@ -16,7 +16,7 @@
                                     <th>#</th>
                                     <th>{{$t("order.user-id")}}</th>
                                     <th>{{$t("order.tradeno")}}</th>
-                                    <th>{{$t("order.total")}}</th>
+                                    <th>{{$t("order.amount")}}</th>
                                     <th>{{$t("order.renew")}}</th>
                                     <th>{{$t("order.time")}}</th>
                                     <th>{{$t("order.method")}}</th>
@@ -27,7 +27,7 @@
                                     <td>#{{c.id}}</td>
                                     <td>{{c.user_id}}</td>
                                     <td>{{c.tradeno}}</td>
-                                    <td>{{c.total}}</td>
+                                    <td>{{c.amount}}</td>
                                     <td>{{c.renew}}个月</td>
                                     <td>{{timeFormat(c.datetime)}}</td>
                                     <td>{{c.method}}</td>

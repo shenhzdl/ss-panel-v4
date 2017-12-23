@@ -37,4 +37,19 @@ class UserController extends BaseController
         //return $this->echoJsonWithData($res,$traffic);
         return $this->echoJson($response, $traffic);
     }
+
+    public function set(Request $request, Response $response, $args)
+    {
+        $users = User::where('expire_time','<',time())
+            ->where(function($query){
+                $query->where('enable','=','1');
+            })
+            ->get();
+        foreach($users as $user)
+        {
+            $user->enable = 0;
+            $user->save();
+        }
+        return $this->echoJsonWithData($response, []);
+    }
 }

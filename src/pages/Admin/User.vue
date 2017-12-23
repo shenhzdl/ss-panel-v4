@@ -15,6 +15,9 @@
                                 <a href="#" class="uk-search-icon-flip" uk-search-icon v-on:click="Results(1)"></a>
                                 <input class="uk-search-input" type="search" placeholder="Search..." v-model="keyword" v-on:keyup.enter="Results(1)"/>
                             </div>
+                            <button class="uk-margin-left uk-button uk-button-primary" v-on:click="reset">
+                                    {{$t("user-info.reset-enable")}}
+                            </button>
                         </div>
                         <table class="uk-table uk-table-striped">
                             <thead>
@@ -89,6 +92,27 @@
                     })
                     .catch(e => {
                     })
+            },
+            reset()
+            {
+                admin.post('setuser')
+                .then(response=>{
+                    UIkit.notification({
+                        message: this.$t('base.success'),
+                        status: 'primary',
+                        pos: 'top-center',
+                        timeout: 5000
+                    });
+                    this.Results();
+                })
+                .catch(e=>{
+                    UIkit.notification({
+                        message: this.$t('base.something-wrong'),
+                        status: 'danger',
+                        pos: 'top-center',
+                        timeout: 5000
+                    });
+                });
             },
             timeFormat(ut){
                 return new Date(ut * 1e3).toLocaleDateString();

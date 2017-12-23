@@ -13,7 +13,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `order` (
   `id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL DEFAULT 0,
-  `total` decimal(12,2) NOT NULL DEFAULT 0,
+  `amount` decimal(12,2) NOT NULL DEFAULT 0,
   `method` varchar(64) NOT NULL DEFAULT '支付宝',
   `tradeno` varchar(128),
   `renew` int(11) NOT NULL DEFAULT 1,

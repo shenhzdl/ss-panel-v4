@@ -16114,13 +16114,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "transfer-enable": "Transfer Enable",
             "expire-time": "Expire Time",
             "enable": "Enable",
-            "reg-ip": "Register IP"
+            "reg-ip": "Register IP",
+            "reset-enable": "Reset Enable"
         },
         "order": {
             "user-id": "User ID",
             "order": "Order",
             "tradeno": "Trade No.",
-            "total": "Total",
+            "amount": "Amount",
             "renew": "Renew",
             "time": "Time",
             "method": "Pay Method"
@@ -16278,12 +16279,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             "transfer-enable": "总流量",
             "expire-time": "到期时间",
             "enable": "是否激活",
-            "reg-ip": "注册IP"
+            "reg-ip": "注册IP",
+            "reset-enable": "设置可用性"
         },
         "order": {
             "user-id": "用户ID",
             "tradeno": "订单号",
-            "total": "金额",
+            "amount": "金额",
             "renew": "续费时长",
             "time": "订单时间",
             "method": "付款方式"
@@ -19957,6 +19959,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -19986,6 +19991,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.data = response.data;
                 _this.logs = response.data.data;
             }).catch(function (e) {});
+        },
+        reset: function reset() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0__http_admin__["a" /* default */].post('setuser').then(function (response) {
+                UIkit.notification({
+                    message: _this2.$t('base.success'),
+                    status: 'primary',
+                    pos: 'top-center',
+                    timeout: 5000
+                });
+                _this2.Results();
+            }).catch(function (e) {
+                UIkit.notification({
+                    message: _this2.$t('base.something-wrong'),
+                    status: 'danger',
+                    pos: 'top-center',
+                    timeout: 5000
+                });
+            });
         },
         timeFormat: function timeFormat(ut) {
             return new Date(ut * 1e3).toLocaleDateString();
@@ -20062,7 +20087,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.keyword = $event.target.value
       }
     }
-  })])]), _vm._v(" "), _c('table', {
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "uk-margin-left uk-button uk-button-primary",
+    on: {
+      "click": _vm.reset
+    }
+  }, [_vm._v("\n                                " + _vm._s(_vm.$t("user-info.reset-enable")) + "\n                        ")])]), _vm._v(" "), _c('table', {
     staticClass: "uk-table uk-table-striped"
   }, [_c('thead', [_c('tr', [_c('th', [_vm._v("#")]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.email")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.transfer-upload")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.transfer-download")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.transfer-enable")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.expire-time")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.enable")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("user-info.reg-ip")))])])]), _vm._v(" "), _c('tbody', _vm._l((_vm.data.data), function(c) {
     return _c('tr', [_c('td', [_vm._v("#" + _vm._s(c.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.email))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.bytesToSize(c.u)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.bytesToSize(c.d)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.bytesToSize(c.transfer_enable)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.timeFormat(c.expire_time)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.enable))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.reg_ip))]), _vm._v(" "), _c('td', [_c('div', {
@@ -20258,8 +20288,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "uk-card uk-card-default uk-card-body"
   }, [_c('table', {
     staticClass: "uk-table uk-table-striped"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("#")]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.user-id")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.tradeno")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.total")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.renew")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.time")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.method")))])])]), _vm._v(" "), _c('tbody', _vm._l((_vm.data.data), function(c) {
-    return _c('tr', [_c('td', [_vm._v("#" + _vm._s(c.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.user_id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.tradeno))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.total))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.renew) + "个月")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.timeFormat(c.datetime)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.method))])])
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("#")]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.user-id")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.tradeno")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.amount")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.renew")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.time")))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t("order.method")))])])]), _vm._v(" "), _c('tbody', _vm._l((_vm.data.data), function(c) {
+    return _c('tr', [_c('td', [_vm._v("#" + _vm._s(c.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.user_id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.tradeno))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.amount))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.renew) + "个月")]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.timeFormat(c.datetime)))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(c.method))])])
   }))]), _vm._v(" "), _c('pagination', {
     attrs: {
       "data": _vm.data
@@ -20392,6 +20422,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -20410,6 +20449,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             user_id: this.$route.params.user_id,
             method: '支付宝',
             tradeno: '',
+            amount: 0,
             renew: 1
         };
     },
@@ -20421,6 +20461,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             __WEBPACK_IMPORTED_MODULE_0__http_admin__["a" /* default */].post('orders', {
                 user_id: this.user_id,
                 method: this.method,
+                amount: this.amount,
                 tradeno: this.tradeno,
                 renew: this.renew
             }).then(function (response) {
@@ -20535,6 +20576,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v(_vm._s(m))])
   }))])]), _vm._v(" "), _c('div', {
+    staticClass: "uk-margin"
+  }, [_c('label', {
+    staticClass: "uk-form-label",
+    attrs: {
+      "for": "form-horizontal-text"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("order.amount")))]), _vm._v(" "), _c('div', {
+    staticClass: "uk-form-controls"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.amount),
+      expression: "amount"
+    }],
+    staticClass: "uk-input",
+    attrs: {
+      "id": "form-horizontal-text",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.amount)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.amount = $event.target.value
+      }
+    }
+  })])]), _vm._v(" "), _c('div', {
     staticClass: "uk-margin"
   }, [_c('label', {
     staticClass: "uk-form-label",

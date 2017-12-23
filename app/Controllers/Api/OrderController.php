@@ -22,6 +22,7 @@ class OrderController extends BaseController
             ->first();
         $renew = $order->renew;
         $user = User::find($id);
+        $nowt = time();
         if($nowt > $user->expire_time)
         {
             $expire_time = strtotime('+'.$renew.' month',$nowt);
@@ -30,8 +31,9 @@ class OrderController extends BaseController
         {
             $expire_time = strtotime('+'.$renew.' month',$user->expire_time);
         }
-        $suer->transfer_enable = $suer->transfer_enable + $renew * 20*1000*1000*1000;
+        $user->transfer_enable = $user->transfer_enable + $renew * 20*1000*1000*1000;
         $user->expire_time = $expire_time;
+        $user->enable = 1;
         $user->invite_num = $user->invite_num + $arr['renew'];
         $user->save();
         $order->user_id = $id;
@@ -55,7 +57,7 @@ class OrderController extends BaseController
         $nowt = time();
         $arr['datetime'] =  $nowt;
         $arr['method'] = '支付宝';
-        switch ($arr['total']) {
+        switch ($arr['amount']) {
             case '10.0':
                 $arr['renew'] = 1;
                 break;

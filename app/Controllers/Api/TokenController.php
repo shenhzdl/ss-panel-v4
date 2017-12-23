@@ -151,6 +151,7 @@ class TokenController extends BaseController implements AuthCode,Cfg
         $user->t = 0;
         $user->u = 0;
         $user->d = 0;
+        $user->expire_time = strtotime('+1 month',time());
         $user->transfer_enable = Tools::toGB(db_config(self::DefaultTraffic, 1));
         $user->invite_num = db_config(self::DefaultInviteNum, 10);
         $user->reg_ip = Http::getClientIP();
