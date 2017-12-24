@@ -15,17 +15,13 @@
                                 <img class="uk-border-rounded uk-box-shadow-small" src="/assets/img/zfbqrcode.jpg" >
                             </div>
                             <span>
-                                1个月/10元
+                                1个月/10元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3个月/30元
                                 <br/>
-                                3个月/30元
+                                6个月/50元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1年/100元
                                 <br/>
-                                6个月/50元
+                                充值3个月以上每3个月赠送一个邀请码。
                                 <br/>
-                                1年/100元
-                                <br/>
-                                充值3个月以上每三个月赠送一个邀请码
-                                <br/>
-                                请支付宝扫码支付后在下面的输入框输入支付订单号，点击充值按钮进行充值
+                                请支付宝扫码支付后输入支付订单号，点击充值按钮进行充值，成功后刷新网页到账。
                             </span>
                         </div>
                         <div class="uk-margin">
