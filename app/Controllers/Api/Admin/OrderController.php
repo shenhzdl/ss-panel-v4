@@ -17,9 +17,10 @@ class OrderController extends BaseController
         if (isset($req->getQueryParams()['page'])) {
             $pageNum = $req->getQueryParams()['page'];
         }
-        $traffic = Order::paginate(15, [
-            '*',
-        ], 'page', $pageNum);
+        $traffic = Order::orderBy('id', 'desc')
+            ->paginate(15, [
+                '*',
+            ], 'page', $pageNum);
         $traffic->setPath('/api/admin/orders');
         //return $this->echoJsonWithData($res,$traffic);
         return $this->echoJson($res, $traffic);

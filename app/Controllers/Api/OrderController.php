@@ -33,8 +33,14 @@ class OrderController extends BaseController
         }
         $user->transfer_enable = $user->transfer_enable + $renew * 20*1000*1000*1000;
         $user->expire_time = $expire_time;
-        $user->enable = 1;
-        $user->invite_num = $user->invite_num + $arr['renew'];
+        if($renew >= 1)
+        {
+            $user->enable = 1;
+        }
+        if($renew >= 3)
+        {
+            $user->invite_num = $user->invite_num + floor($renew/3);
+        }
         $user->save();
         $order->user_id = $id;
         $order->save();
@@ -54,8 +60,9 @@ class OrderController extends BaseController
     {
         $input = file_get_contents("php://input");
         $arr = json_decode($input, true);
-        $nowt = time();
-        $arr['datetime'] =  $nowt;
+        //不要名称
+        unset($arr['name']);
+        $arr['datetime'] =  strtotime($arr['datetime']);
         $arr['method'] = '支付宝';
         switch ($arr['amount']) {
             case '10.0':
@@ -71,6 +78,7 @@ class OrderController extends BaseController
                 $arr['renew'] = 12;
                 break;
             default:
+                $arr['renew'] = 0;
                 break;
         }
         return $this->saveModel($res, new Order(), $arr);

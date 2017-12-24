@@ -93,6 +93,9 @@ $app->group('/api', function () {
 
     // Etc
     $this->get('/captcha/{id}', 'App\Controllers\ResController:captcha');
+
+    //Order
+    $this->post('/order', 'App\Controllers\Api\OrderController:store');
 });
 
 // mu

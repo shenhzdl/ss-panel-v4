@@ -20,9 +20,10 @@ class UserController extends BaseController
         }
         if(True == empty($keyword))
         {
-            $traffic = User::paginate(15, [
-                '*',
-            ], 'page', $pageNum);
+            $traffic = User::orderBy('id', 'desc')
+                ->paginate(15, [
+                    '*',
+                ], 'page', $pageNum);
         }
         else
         {
