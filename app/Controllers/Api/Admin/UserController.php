@@ -20,7 +20,7 @@ class UserController extends BaseController
         }
         if(True == empty($keyword))
         {
-            $traffic = User::orderBy('id', 'desc')
+            $traffic = User::orderBy('expire_time', 'asc')
                 ->paginate(15, [
                     '*',
                 ], 'page', $pageNum);
@@ -28,7 +28,7 @@ class UserController extends BaseController
         else
         {
             $traffic = User::where('email','like','%'.$keyword.'%')
-                ->orderBy('id', 'desc')
+                ->orderBy('expire_time', 'asc')
                 ->paginate(15, [
                     '*',
                 ], 'page', $pageNum);
@@ -51,6 +51,24 @@ class UserController extends BaseController
             $user->enable = 0;
             $user->save();
         }
+        return $this->echoJsonWithData($response, []);
+    }
+
+    public function setone(Request $request, Response $response, $args)
+    {
+        $id = $request->getParam('user_id');
+        $enable = $request->getParam('enable');
+        $user = User::find($id);
+        if($enable)
+        {
+            $enable = 1;
+        }
+        else
+        {
+            $enable = 0;
+        }
+        $user->enable = $enable;
+        $user->save();
         return $this->echoJsonWithData($response, []);
     }
 }

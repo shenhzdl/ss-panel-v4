@@ -15,7 +15,7 @@
                                 <a href="#" class="uk-search-icon-flip" uk-search-icon v-on:click="Results(1)"></a>
                                 <input class="uk-search-input" type="search" placeholder="Search..." v-model="keyword" v-on:keyup.enter="Results(1)"/>
                             </div>
-                            <button class="uk-margin-left uk-button uk-button-primary" v-on:click="reset">
+                            <button class="uk-margin-left uk-button uk-button-primary" v-on:click="setall">
                                     {{$t("user-info.reset-enable")}}
                             </button>
                         </div>
@@ -40,7 +40,7 @@
                                     <td>{{bytesToSize(c.d)}}</td>
                                     <td>{{bytesToSize(c.transfer_enable)}}</td>
                                     <td>{{timeFormat(c.expire_time)}}</td>
-                                    <td>{{c.enable}}</td>
+                                    <td><input class="uk-checkbox" type="checkbox" v-model="c.enable" v-on:click="setone(c)"></td>
                                     <td>{{c.reg_ip}}</td>
                                     <td> <div class="uk-margin">
                                         <router-link tag="li" :to="{ name: 'orderadd',params:{user_id:c.id }}" exact>
@@ -88,14 +88,43 @@
                 admin.get(`users?page=` + page + '&keyword=' + this.keyword)
                     .then(response => {
                         this.data = response.data;
+                        for (let index = 0; index < this.data.data.length; index++) {
+                            this.data.data[index].enable = this.data.data[index].enable == 1;
+                        }
                         this.logs = response.data.data;
                     })
                     .catch(e => {
                     })
             },
-            reset()
+            setall()
             {
                 admin.post('setuser')
+                .then(response=>{
+                    UIkit.notification({
+                        message: this.$t('base.success'),
+                        status: 'primary',
+                        pos: 'top-center',
+                        timeout: 5000
+                    });
+                    this.Results();
+                })
+                .catch(e=>{
+                    UIkit.notification({
+                        message: this.$t('base.something-wrong'),
+                        status: 'danger',
+                        pos: 'top-center',
+                        timeout: 5000
+                    });
+                });
+            },
+            setone(item)
+            {
+                item.enable = !item.enable;
+                admin.post('setone',
+                {
+                    user_id:item.id,
+                    enable:item.enable
+                })
                 .then(response=>{
                     UIkit.notification({
                         message: this.$t('base.success'),
