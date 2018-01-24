@@ -8,13 +8,21 @@
         </div>
         <div class="uk-section-small">
             <div class="uk-container uk-container-large">
-                <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-3@m">
+                <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-4@m">
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <span class="statistics-text">软件下载</span><br/>
+                            <div><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.7/Shadowsocks-4.0.7.zip">Shadowsocks PC版</a></div>
+                            <div><a href="https://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks">Shadowsocks Android版</a></div>
+                            <div><a href="/document">使用手册</a></div>
+                        </div>
+                    </div>
                     <div>
                         <div class="uk-card uk-card-default uk-card-body">
                             <span class="statistics-text">{{$t("ss.traffic_total")}}</span><br/>
                             <span class="statistics-number">
                                     {{$store.state.user.traffic.total}}
-                                </span>
+                            </span>
                         </div>
                     </div>
                     <div>
@@ -22,7 +30,7 @@
                             <span class="statistics-text">{{$t("ss.traffic_used")}}</span><br/>
                             <span class="statistics-number">
                                    {{$store.state.user.traffic.used}}
-                                </span>
+                            </span>
                         </div>
                     </div>
                     <div>
@@ -30,7 +38,7 @@
                             <span class="statistics-text">{{$t("ss.traffic_unused")}}</span><br/>
                             <span class="statistics-number">
                                     {{$store.state.user.traffic.unused}}
-                                </span>
+                            </span>
                         </div>
                     </div>
                 </div>

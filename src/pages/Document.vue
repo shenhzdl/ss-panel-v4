@@ -11,12 +11,12 @@
                     <div class="uk-card uk-card-default uk-card-body">
                         <ul uk-accordion>
                             <li class="uk-open">
-                                <h3 class="uk-accordion-title">使用手册</h3>
+                                <h3 class="uk-accordion-title">PC客户端使用手册</h3>
                                 <div class="uk-accordion-content">
                                     <p>本手册以Windows的原版Shadowsocks为例，其他客户端类似。</p>
                                     <ul>
                                         <li>
-                                            <p>第一步，下载客户端
+                                            <p>第一步，下载客户端。
                                                 <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.7/Shadowsocks-4.0.7.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
                                                 <br/>
                                                 <img alt="image" src="/assets/img/doc1.png"/>
@@ -47,6 +47,40 @@
                                                 <li>Firefox浏览器设置方式：选项&gt;&gt;最下面&gt;&gt;网络代理&gt;&gt;点设置按钮&gt;&gt;手动配置代理，地址输入127.0.0.1，端口输入1080，注意要选择Socket V5。如图。<br/>
                                                 <img alt="image" src="/assets/img/doc6.png"/>  </li>
                                             </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <h3 class="uk-accordion-title">手机客户端使用手册</h3>
+                                <div class="uk-accordion-content">
+                                    <p>本手册以Android原版Shadowsocks为例，其他客户端类似。</p>
+                                    <ul>
+                                        <li>
+                                            <p>第一步，下载客户端。
+                                                <a href="https://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks">下载</a>，传到手机端安装，该APP英文名Shadowsocks，中文名影梭。打开APP，出现如下界面：
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc7.jpg"/>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>接下来我们需要配置参数。在我们的网站中点开节点列表，如图：
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc2.png"/>
+                                                <br/>
+                                                点开一个节点，如图，可以看到该节点对应的二维码。
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc3.png"/>
+                                                <br/>
+                                                然后我们在手机上点击右上角的加号按钮，选择扫描二维码，如图，扫描节点下面的二维码，扫描成功后列表中那个会出现一条服务器信息。
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc8.jpg"/>
+                                                <br/>
+                                                除了扫描二维码之外还可以手动设置，这与PC上的参数设置类似，在此不赘述。设置完成之后选择一个服务器，点击右下角的小飞机图标，如图，等飞机绿了之后，就可以自由自在的上网了。要停止服务，也只需要点击一下小飞机，让飞机变灰就可以了。
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc9.jpg"/>
+                                                <br/>
+                                            </p>
                                         </li>
                                     </ul>
                                 </div>
