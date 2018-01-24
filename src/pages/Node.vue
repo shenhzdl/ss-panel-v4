@@ -21,18 +21,10 @@
                                             class="uk-label uk-label-success">{{node.traffic_rate}}</span></p>
                                     <blockquote>{{node.info}}</blockquote>
 
-                                    <div uk-grid
-                                         class="uk-child-width-1-1@s uk-child-width-1-3@m uk-child-width-1-4@xl">
-                                        <div class="uk-card uk-card-default uk-card-body">
-                                            <VueQr :bgSrc='qrBg' :logoSrc="ssLogo" :text="node.ssQr" height="400"
-                                                   width="400" colorDark="#000000" colorLight="#ffffff"
-                                                   autoColor="true"></VueQr>
-                                        </div>
-                                        <div class="uk-card uk-card-default uk-card-body">
-                                            <VueQr :bgSrc='qrBg' :logoSrc="ssrLogo" :text="node.ssrQr" height="400"
-                                                   width="400" colorDark="#000000" colorLight="#ffffff"
-                                                   autoColor="true"></VueQr>
-                                        </div>
+                                    <div class="uk-card uk-card-default uk-card-body">
+                                        <VueQr :bgSrc='qrBg' :logoSrc="ssLogo" :text="node.ssQr" height="400"
+                                                width="400" colorDark="#000000" colorLight="#ffffff"
+                                                autoColor="true"></VueQr>
                                     </div>
                                 </div>
                             </li>

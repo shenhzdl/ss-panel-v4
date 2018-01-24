@@ -58,9 +58,9 @@ class UserController extends BaseController implements AuthCode,Cfg
         $nodes = Node::where('type', 1)->orderBy('sort')->get();
         $data = [];
         foreach ($nodes as $n) {
-            $n->ssArr = SsUtil::genSsAry($n->server, $user->port + $n->offset, $user->passwd, $user->method);
-            $n->ssQr = SsUtil::genQrStr($n->server, $user->port + $n->offset, $user->passwd, $user->method);
-            $n->ssrQr = SsUtil::genSsrQrStr($n->server, $user->port + $n->offset, $user->passwd, $user->method, $user->protocol, $user->obfs, $user->obfs_param, $user->protocol_param);
+            $n->ssArr = SsUtil::genSsAry($n->server, $user->port, $user->passwd, $user->method);
+            $n->ssQr = SsUtil::genQrStr($n->server, $user->port, $user->passwd, $user->method);
+            $n->ssrQr = SsUtil::genSsrQrStr($n->server, $user->port, $user->passwd, $user->method, $user->protocol, $user->obfs, $user->obfs_param, $user->protocol_param);
             array_push($data, $n);
         }
         return $this->echoJsonWithData($res, $data);
