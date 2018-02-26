@@ -24,6 +24,7 @@ $app->group('', function () {
     $this->get('/profile', 'App\Controllers\HomeController:dashboard');
     $this->get('/document', 'App\Controllers\HomeController:dashboard');
     $this->get('/recharge', 'App\Controllers\HomeController:dashboard');
+    $this->get('/navigation', 'App\Controllers\HomeController:dashboard');
 });
 
 

@@ -137,7 +137,8 @@ export default {
             "edit-profile": "Edit Profile",
             "invite-friend": "Invite Friend",
             "admin-panel": "Admin Panel",
-            "join-at": "Join At"
+            "join-at": "Join At",
+            "navigation":"Navigation"
         },
         "user-info":
         {
@@ -304,7 +305,8 @@ export default {
             "invite-friend": "邀请好友",
             "document":"使用手册",
             "admin-panel": "管理面板",
-            "join-at": "加入于"
+            "join-at": "加入于",
+            "navigation":"网址导航"
         },
         "user-info":
         {

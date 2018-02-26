@@ -16,6 +16,7 @@ import Setting from './pages/Setting.vue'
 import Profile from './pages/Profile.vue'
 import Document from './pages/Document.vue'
 import Recharge from './pages/Recharge.vue'
+import Navigation from './pages/Navigation.vue'
 
 const routes = [
     {path: '/', name: 'index', component: Index},
@@ -34,6 +35,7 @@ const routes = [
     {path: '/setting', name: 'setting', component: Setting},
     {path: '/document', name: 'document', component: Document},
     {path: '/recharge', name: 'recharge', component: Recharge},
+    {path: '/navigation', name: 'navigation', component: Navigation},
 ];
 
 const router = new VueRouter({

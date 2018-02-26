@@ -17,7 +17,7 @@
                                     <ul>
                                         <li>
                                             <p>第一步，下载客户端。
-                                                <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.7/Shadowsocks-4.0.7.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
+                                                <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.8/Shadowsocks-4.0.8.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
                                                 <br/>
                                                 <img alt="image" src="/assets/img/doc1.png"/>
                                             </p>

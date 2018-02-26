@@ -33,15 +33,19 @@
                     {{ $t("user-nav.invite-friend") }} </a></router-link>
             </li>
             <li class="uk-nav">
-                <router-link tag="li" :to="{ name: 'setting' }" exact><a href="#"><span class="uk-margin-small-right"
-                                                                                        uk-icon="icon: settings"></span>
-                    {{ $t("base.setting") }} </a></router-link>
-            </li>
-
-            <li class="uk-nav">
                 <router-link tag="li" :to="{ name: 'document' }" exact><a href="#"><span class="uk-margin-small-right"
                                                                                         uk-icon="icon: copy"></span>
                     {{ $t("user-nav.document") }} </a></router-link>
+            </li>
+            <li class="uk-nav">
+                <router-link tag="li" :to="{ name: 'navigation' }" exact><a href="#"><span class="uk-margin-small-right"
+                                                                                        uk-icon="icon: bookmark"></span>
+                    {{ $t("user-nav.navigation") }} </a></router-link>
+            </li>
+            <li class="uk-nav">
+                <router-link tag="li" :to="{ name: 'setting' }" exact><a href="#"><span class="uk-margin-small-right"
+                                                                                        uk-icon="icon: settings"></span>
+                    {{ $t("base.setting") }} </a></router-link>
             </li>
 
             <li class="uk-nav" v-if="$store.state.user.data.is_admin">
