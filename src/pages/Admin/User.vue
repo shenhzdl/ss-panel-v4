@@ -23,6 +23,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>{{$t("user-info.user-name")}}</th>
                                     <th>{{$t("user-info.email")}}</th>
                                     <th>{{$t("user-info.transfer-upload")}}</th>
                                     <th>{{$t("user-info.transfer-download")}}</th>
@@ -35,6 +36,7 @@
                             <tbody>
                                 <tr v-for="c in data.data">
                                     <td>#{{c.id}}</td>
+                                    <td>{{c.user_name}}</td>
                                     <td>{{c.email}}</td>
                                     <td>{{bytesToSize(c.u)}}</td>
                                     <td>{{bytesToSize(c.d)}}</td>
