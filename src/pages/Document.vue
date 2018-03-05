@@ -17,7 +17,7 @@
                                     <ul>
                                         <li>
                                             <p>第一步，下载客户端。
-                                                <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.8/Shadowsocks-4.0.8.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
+                                                <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.7/Shadowsocks-4.0.7.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
                                                 <br/>
                                                 <img alt="image" src="/assets/img/doc1.png"/>
                                             </p>
@@ -35,18 +35,8 @@
                                                 <br/>
                                                 <img alt="image" src="/assets/img/doc4.jpg"/>
                                                 <br/>
-                                                配置完之后点击确定即可，界面会隐藏到左面右下角的状态栏。另外我们提供了多个节点，这也就表示我们的用户可以点击添加按钮添加多条配置，随意使用哪一个节点，甚至可以开启服务器>>负载均衡来同时使用多个节点，提高速度。
+                                                配置完之后点击确定，界面会隐藏到左面右下角的状态栏，右键点击小图标，点击“启动系统代理”，保证前面有个小勾。另外我们提供了多个节点，这也就表示我们的用户可以点击添加按钮添加多条配置，随意使用哪一个节点，甚至可以开启服务器>>负载均衡来同时使用多个节点，提高速度。
                                             </p>
-                                        </li>
-                                        <li>
-                                            <p>第三步是配置浏览器：</p>
-                                            <ul>
-                                                <li>IE浏览器设置方式：设置&gt;&gt;Intenet选项&gt;&gt;连接选项卡&gt;&gt;局域网设置，在代理服务器部分，勾选为LAN使用代理服务器，地址填入127.0.0.1，端口填入1080。如图：<br/>
-                                                <img alt="image" src="/assets/img/doc5.png"/>  </li>
-                                                <li>Chrome浏览器设置方式：设置&gt;&gt;最下面&gt;&gt;高级&gt;&gt;最下面&gt;&gt;打开代理设置，之后就跟IE设置一致。</li>
-                                                <li>Firefox浏览器设置方式：选项&gt;&gt;最下面&gt;&gt;网络代理&gt;&gt;点设置按钮&gt;&gt;手动配置代理，地址输入127.0.0.1，端口输入1080，注意要选择Socket V5。如图。<br/>
-                                                <img alt="image" src="/assets/img/doc6.png"/>  </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
