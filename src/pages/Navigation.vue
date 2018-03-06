@@ -73,7 +73,7 @@
                                     <td><a href=""></a></td>
                                     <td><a href="http://www.mychinese.news/">华文优读</a></td>
                                     <td><a href="http://www.chinaaid.net/">对华援助协会</a></td>
-                                    <td><a href=""></a></td>
+                                    <td><a href="https://developers.google.com/machine-learning/crash-course/?hl=zh-cn">谷歌机器学习速成课程</a></td>
                                     <td><a href="https://www.youporn.com/">YouPorn</a></td>
                                 </tr>
                                 <tr>
