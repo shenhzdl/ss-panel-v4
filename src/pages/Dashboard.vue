@@ -12,7 +12,7 @@
                     <div>
                         <div class="uk-card uk-card-default uk-card-body">
                             <span class="statistics-text">软件下载</span><br/>
-                            <div><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.8/Shadowsocks-4.0.8.zip">Shadowsocks PC版</a></div>
+                            <div><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.7/Shadowsocks-4.0.7.zip">Shadowsocks PC版</a></div>
                             <div><a href="https://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks">Shadowsocks Android版</a></div>
                             <div><a href="/document">使用手册</a></div>
                         </div>
