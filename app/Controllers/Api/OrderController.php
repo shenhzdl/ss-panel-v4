@@ -20,6 +20,12 @@ class OrderController extends BaseController
                 $query->where('user_id','=','0');
             })
             ->first();
+        if($order == null)
+        {
+            return $this->echoJsonWithData($res, [
+                'success' => false
+            ]);
+        }
         $renew = $order->renew;
         $user = User::find($id);
         $nowt = time();
@@ -44,7 +50,9 @@ class OrderController extends BaseController
         $user->save();
         $order->user_id = $id;
         $order->save();
-        return $this->echoJsonWithData($res, []);
+        return $this->echoJsonWithData($res, [
+            'success' => true
+        ]);
     }
 
     private function saveModel(Response $response, Order $node, $arr)

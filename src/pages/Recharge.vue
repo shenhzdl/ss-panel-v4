@@ -66,12 +66,24 @@
                     tradeno:this.tradeno
                 })
                 .then(response=>{
-                    UIkit.notification({
-                        message: this.$t('base.success'),
-                        status: 'primary',
-                        pos: 'top-center',
-                        timeout: 5000
-                    });
+                    if(response.data.data.success)
+                    {
+                        UIkit.notification({
+                            message: this.$t('base.success'),
+                            status: 'primary',
+                            pos: 'top-center',
+                            timeout: 5000
+                        });
+                    }
+                    else
+                    {
+                        UIkit.notification({
+                            message: this.$t('base.something-wrong'),
+                            status: 'danger',
+                            pos: 'top-center',
+                            timeout: 5000
+                        });
+                    }
                     
                 })
                 .catch(err=>{
