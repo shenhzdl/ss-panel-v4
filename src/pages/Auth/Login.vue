@@ -59,13 +59,13 @@
                         </h6>
                     </router-link>
                 </div>
-                <div class="pull-right">
+                <!-- <div class="pull-right">
                     <router-link :to="{ name: 'password-reset' }" exact>
                         <h6>
                             <a class="link">{{ $t("auth.forgot-password") }}</a>
                         </h6>
                     </router-link>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

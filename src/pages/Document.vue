@@ -86,7 +86,7 @@
                             <li>
                                 <h3 class="uk-accordion-title">原版Shadowsocks下载</h3>
                                 <div class="uk-accordion-content">
-                                    <p>Windwos客户端：<a class="uk-link-muted" href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.7/Shadowsocks-4.0.7.zip">下载</a></p>
+                                    <p>Windwos客户端：<a class="uk-link-muted" href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.9/Shadowsocks-4.0.9.zip">下载</a></p>
                                     <p>MacOS客户端：<a class="uk-link-muted" href="https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v1.7.0/ShadowsocksX-NG.1.7.0.zip">下载</a></p>
                                     <p>
                                         Android客户端：
