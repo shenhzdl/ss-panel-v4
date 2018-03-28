@@ -162,7 +162,7 @@ export default {
         {
             "user-id":"User ID",
             "order":"Order",
-            "tradeno":"Trade No.",
+            "tradeno":"Alipay Pay Trade No.",
             "amount":"Amount",
             "renew":"Renew",
             "time":"Time",
@@ -329,7 +329,7 @@ export default {
         "order":
         {
             "user-id":"用户ID",
-            "tradeno":"订单号",
+            "tradeno":"支付宝支付订单号",
             "amount":"金额",
             "renew":"续费时长",
             "time":"订单时间",
