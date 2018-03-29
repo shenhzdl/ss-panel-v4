@@ -121,9 +121,9 @@
 
                 // SS From
                 password: this.$store.state.user.data.passwd,
-                ssProtocol: '',
-                ssMethod: '',
-                ssObfs: '',
+                ssProtocol: this.$store.state.user.data.protocol,
+                ssMethod: this.$store.state.user.data.method,
+                ssObfs: this.$store.state.user.data.obfs,
 
                 // Password From
                 currentPassword: '',
