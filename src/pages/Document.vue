@@ -48,7 +48,7 @@
                                     <ul>
                                         <li>
                                             <p>第一步，下载客户端。
-                                                <a href="https://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks">下载</a>，传到手机端安装，该APP英文名Shadowsocks，中文名影梭。打开APP，出现如下界面：
+                                                <a href="https://github.com/shadowsocks/shadowsocks-android/releases/download/v4.5.4/shadowsocks--universal-4.5.4.apk">下载</a>，传到手机端安装，该APP英文名Shadowsocks，中文名影梭。打开APP，出现如下界面：
                                                 <br/>
                                                 <img alt="image" src="/assets/img/doc7.jpg"/>
                                             </p>
@@ -94,7 +94,7 @@
                                             <img class="uk-width-1-5" src="https://camo.githubusercontent.com/bdaf711a93d64d0bb5e5abfc346a8b84ea47f164/68747470733a2f2f706c61792e676f6f676c652e636f6d2f696e746c2f656e5f75732f6261646765732f696d616765732f67656e657269632f656e2d706c61792d62616467652e706e67" data-canonical-src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" />
                                         </a>
                                         或者
-                                        <a class="uk-link-muted" href="https://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks">下载APK</a>
+                                        <a class="uk-link-muted" href="https://github.com/shadowsocks/shadowsocks-android/releases/download/v4.5.4/shadowsocks--universal-4.5.4.apk">下载APK</a>
                                     </p>
                                 </div>
                             </li>

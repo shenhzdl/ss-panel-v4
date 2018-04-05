@@ -71,4 +71,12 @@ class UserController extends BaseController
         $user->save();
         return $this->echoJsonWithData($response, []);
     }
+
+    public function addTraffic(Request $request, Response $response, $args)
+    {
+        $id = $request->getParam('user_id');
+        $user = User::find($id);
+        $user->addTraffic(20);
+        return $this->echoJsonWithData($response, []);
+    }
 }

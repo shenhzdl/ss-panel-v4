@@ -21,7 +21,8 @@ export default {
             "mailgun-key": "Mailgun Key",
             "mailgun-domain": "Mailgun Domain",
             "mailgun-sender": "Mailgun Sender",
-            "add-order":"Add Order"
+            "add-order":"Add Order",
+            "add-traffic":"Add Traffic"
         },
         "alert": {
             "success": "Success",
@@ -150,6 +151,7 @@ export default {
             "protocal":"Protocal",
             "obfs":"Obfs",
             "invite-num":"Invite Number",
+            "transfer-used":"Transfer Used",
             "transfer-upload":"Transfer Upload",
             "transfer-download":"Transfer Download",
             "transfer-enable":"Transfer Enable",
@@ -188,7 +190,8 @@ export default {
             "users-total": "总用户",
             "nodes-total": "节点数量",
             "traffic-total": "产生流量",
-            "add-order":"创建订单"
+            "add-order":"创建订单",
+            "add-traffic":"增加流量"
         },
         "alert": {
             "success": "成功!",
@@ -318,6 +321,7 @@ export default {
             "protocal":"协议插件",
             "obfs":"混淆插件",
             "invite-num":"邀请码数",
+            "transfer-used":"已用流量",
             "transfer-upload":"上传流量",
             "transfer-download":"下载流量",
             "transfer-enable":"总流量",

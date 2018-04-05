@@ -187,10 +187,12 @@ class User extends Model
     }
 
     /*
-     * @param traffic 单位 MB
+     * @param traffic 单位 GB
      */
     public function addTraffic($traffic)
     {
+        $this->transfer_enable += Tools::toGB($traffic);
+        $this->save();
     }
 
     public function inviteCodes()

@@ -25,12 +25,12 @@
                                     <th>#</th>
                                     <th>{{$t("user-info.user-name")}}</th>
                                     <th>{{$t("user-info.email")}}</th>
-                                    <th>{{$t("user-info.transfer-upload")}}</th>
-                                    <th>{{$t("user-info.transfer-download")}}</th>
+                                    <!-- <th>{{$t("user-info.transfer-upload")}}</th> -->
+                                    <th>{{$t("user-info.transfer-used")}}</th>
                                     <th>{{$t("user-info.transfer-enable")}}</th>
                                     <th>{{$t("user-info.expire-time")}}</th>
                                     <th>{{$t("user-info.enable")}}</th>
-                                    <th>{{$t("user-info.reg-ip")}}</th>
+                                    <!-- <th>{{$t("user-info.reg-ip")}}</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,19 +38,24 @@
                                     <td>#{{c.id}}</td>
                                     <td>{{c.user_name}}</td>
                                     <td>{{c.email}}</td>
-                                    <td>{{bytesToSize(c.u)}}</td>
-                                    <td>{{bytesToSize(c.d)}}</td>
+                                    <!-- <td>{{bytesToSize(c.u)}}</td> -->
+                                    <td>{{bytesToSize(c.d + c.u)}}</td>
                                     <td>{{bytesToSize(c.transfer_enable)}}</td>
                                     <td>{{timeFormat(c.expire_time)}}</td>
                                     <td><input class="uk-checkbox" type="checkbox" v-model="c.enable" v-on:click="setone(c)"></td>
-                                    <td>{{c.reg_ip}}</td>
-                                    <td> <div class="uk-margin">
-                                        <router-link tag="li" :to="{ name: 'orderadd',params:{user_id:c.id }}" exact>
-                                            <button class="uk-button uk-button-primary">
-                                                {{$t("admin.add-order")}}
+                                    <!-- <td>{{c.reg_ip}}</td> -->
+                                    <td> 
+                                        <div class="uk-margin">
+                                            <router-link tag="span" :to="{ name: 'orderadd',params:{user_id:c.id }}" exact>
+                                                <button class="uk-button uk-button-primary">
+                                                    {{$t("admin.add-order")}}
+                                                </button>
+                                            </router-link>
+                                            <button class="uk-button uk-button-default" v-on:click="addTraffic(c.id)">
+                                                    {{$t("admin.add-traffic")}}
                                             </button>
-                                        </router-link>
-                                    </div></td>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -126,6 +131,30 @@
                 {
                     user_id:item.id,
                     enable:item.enable
+                })
+                .then(response=>{
+                    UIkit.notification({
+                        message: this.$t('base.success'),
+                        status: 'primary',
+                        pos: 'top-center',
+                        timeout: 5000
+                    });
+                    this.Results();
+                })
+                .catch(e=>{
+                    UIkit.notification({
+                        message: this.$t('base.something-wrong'),
+                        status: 'danger',
+                        pos: 'top-center',
+                        timeout: 5000
+                    });
+                });
+            },
+            addTraffic(id)
+            {
+                admin.post('addtraffic',
+                {
+                    user_id:id,
                 })
                 .then(response=>{
                     UIkit.notification({

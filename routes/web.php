@@ -90,8 +90,10 @@ $app->group('/api', function () {
     $this->get('/admin/users', 'App\Controllers\Api\Admin\UserController:index')->add(new Admin());
     $this->post('/admin/setuser', 'App\Controllers\Api\Admin\UserController:set')->add(new Admin());
     $this->post('/admin/setone', 'App\Controllers\Api\Admin\UserController:setone')->add(new Admin());
+    $this->post('/admin/addtraffic', 'App\Controllers\Api\Admin\UserController:addTraffic')->add(new Admin());
     $this->get('/admin/orders', 'App\Controllers\Api\Admin\OrderController:index')->add(new Admin());
     $this->post('/admin/orders', 'App\Controllers\Api\Admin\OrderController:store')->add(new Admin());
+
 
     // Etc
     $this->get('/captcha/{id}', 'App\Controllers\ResController:captcha');
