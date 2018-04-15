@@ -12,8 +12,8 @@
                     <div>
                         <div class="uk-card uk-card-default uk-card-body">
                             <span class="statistics-text">软件下载</span><br/>
-                            <div><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.9/Shadowsocks-4.0.9.zip">Shadowsocks PC版</a></div>
-                            <div><a href="https://github.com/shadowsocks/shadowsocks-android/releases/download/v4.5.4/shadowsocks--universal-4.5.4.apk">Shadowsocks Android版</a></div>
+                            <div><a href="/client/Shadowsocks-4.0.9.zip">Shadowsocks PC版</a></div>
+                            <div><a href="/client/shadowsocks--universal-4.5.4.apk">Shadowsocks Android版</a></div>
                             <div><a href="/document">使用手册</a></div>
                         </div>
                     </div>
