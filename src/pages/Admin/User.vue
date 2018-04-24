@@ -83,7 +83,8 @@
         data () {
             return {
                 data: {},
-                keyword:''
+                keyword:'',
+                currentpage:1
             }
         },
         methods: {
@@ -91,7 +92,7 @@
                 if (typeof page === 'undefined') {
                     page = 1;
                 }
-
+                this.currentpage = page;
                 admin.get(`users?page=` + page + '&keyword=' + this.keyword)
                     .then(response => {
                         this.data = response.data;
@@ -113,7 +114,7 @@
                         pos: 'top-center',
                         timeout: 5000
                     });
-                    this.Results();
+                    this.Results(this.currentpage);
                 })
                 .catch(e=>{
                     UIkit.notification({
@@ -139,7 +140,7 @@
                         pos: 'top-center',
                         timeout: 5000
                     });
-                    this.Results();
+                    this.Results(this.currentpage);
                 })
                 .catch(e=>{
                     UIkit.notification({
@@ -163,7 +164,7 @@
                         pos: 'top-center',
                         timeout: 5000
                     });
-                    this.Results();
+                    this.Results(this.currentpage);
                 })
                 .catch(e=>{
                     UIkit.notification({

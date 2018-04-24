@@ -29,6 +29,11 @@
                                     class="now-ui-icons transportation_air-baloon"></i>{{ $t("nav.invite-code") }}</a>
                             </li>
                         </router-link>
+                        <router-link tag="li" :to="{ name: 'video' }" exact>
+                            <li class="nav-item"><a class="nav-link"><i
+                                    class="now-ui-icons transportation_air-baloon"></i>{{ $t("nav.tutorial-video") }}</a>
+                            </li>
+                        </router-link>
                     </ul>
 
                     <ul class="navbar-nav" v-if="!$store.state.isLogin">

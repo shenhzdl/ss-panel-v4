@@ -9,6 +9,7 @@ $app->group('', function () {
     $this->get('/', 'App\Controllers\HomeController:index');
     $this->get('/doc', 'App\Controllers\HomeController:doc');
     $this->get('/code', 'App\Controllers\HomeController:index');
+    $this->get('/video', 'App\Controllers\HomeController:index');
     $this->get('/password', 'App\Controllers\HomeController:index');
     $this->get('/password/{token}', 'App\Controllers\HomeController:index');
     $this->get('/tos', 'App\Controllers\HomeController:index');

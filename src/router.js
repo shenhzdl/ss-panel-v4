@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from './pages/Index.vue'
 import Code from './pages/Code.vue'
+import Video from './pages/Video.vue'
 
 // Auth
 import Login from './pages/Auth/Login.vue'
@@ -21,6 +22,7 @@ import Navigation from './pages/Navigation.vue'
 const routes = [
     {path: '/', name: 'index', component: Index},
     {path: '/code', name: 'code', component: Code},
+    {path: '/video', name: 'video', component: Video},
 
     // Auth
     {path: '/auth/login', name: 'login', component: Login},
