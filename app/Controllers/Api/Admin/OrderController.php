@@ -55,7 +55,10 @@ class OrderController extends BaseController
         $user->transfer_enable = $user->transfer_enable + $arr['renew'] * 20*1000*1000*1000;
         $user->expire_time = $expire_time;
         $user->enable = 1;
-        $user->invite_num = $user->invite_num + $arr['renew'];
+        if($arr['renew'] >= 3)
+        {
+            $user->invite_num = $user->invite_num + floor($arr['renew']/3);
+        }
         $user->save();
         return $this->saveModel($res, new Order(), $arr);
     }

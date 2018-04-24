@@ -7,6 +7,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\AppKey;
 use App\Controllers\BaseController;
 
 class OrderController extends BaseController
@@ -68,8 +69,18 @@ class OrderController extends BaseController
     {
         $input = file_get_contents("php://input");
         $arr = json_decode($input, true);
-        //不要名称
+        
+        $keypara = $arr['appkey'];
+        $keydata = Appkey::find(1)['appkey'];
+        if( $keypara != $keydata)
+        {
+            return $this->echoJsonWithData($res, [
+                'success' => false
+            ]);
+        }
+        //不要名称和appkey
         unset($arr['name']);
+        unset($arr['appkey']);
         $arr['datetime'] =  strtotime($arr['datetime']);
         $arr['method'] = '支付宝';
         switch ($arr['amount']) {
