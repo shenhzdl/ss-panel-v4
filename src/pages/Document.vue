@@ -38,6 +38,12 @@
                                                 配置完之后点击确定，界面会隐藏到左面右下角的状态栏，右键点击小图标，点击“启动系统代理”，保证前面有个小勾。另外我们提供了多个节点，这也就表示我们的用户可以点击添加按钮添加多条配置，随意使用哪一个节点，甚至可以开启服务器>>负载均衡来同时使用多个节点，提高速度。
                                             </p>
                                         </li>
+                                        <li>
+                                            <p>视频教程<p>
+                                            <video src="/assets/media/tutorial_pc.Ogg" controls="controls">
+                                                您的浏览器不支持H5视频播放。
+                                            </video>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -72,6 +78,12 @@
                                                 <br/>
                                             </p>
                                         </li>
+                                        <li>
+                                            <p>视频教程<p>
+                                            <video src="/assets/media/tutorial_android.Ogg" controls="controls">
+                                                您的浏览器不支持H5视频播放。
+                                            </video>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -91,7 +103,7 @@
                                     <p>
                                         Android客户端：
                                         <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks" rel="nofollow">
-                                            <img class="uk-width-1-5" src="https://camo.githubusercontent.com/bdaf711a93d64d0bb5e5abfc346a8b84ea47f164/68747470733a2f2f706c61792e676f6f676c652e636f6d2f696e746c2f656e5f75732f6261646765732f696d616765732f67656e657269632f656e2d706c61792d62616467652e706e67" data-canonical-src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" />
+                                            <img style="display:inline" class="uk-width-1-5" src="https://camo.githubusercontent.com/bdaf711a93d64d0bb5e5abfc346a8b84ea47f164/68747470733a2f2f706c61792e676f6f676c652e636f6d2f696e746c2f656e5f75732f6261646765732f696d616765732f67656e657269632f656e2d706c61792d62616467652e706e67" data-canonical-src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" />
                                         </a>
                                         或者
                                         <a class="uk-link-muted" href="/client/shadowsocks--universal-4.5.6.apk">下载APK</a>
@@ -105,3 +117,14 @@
         </div>
     </div>
 </template>
+
+<style>
+    video,img{
+        max-width: 32rem;
+        max-height: 24rem;
+        margin: auto;
+        clear: both;
+        display: block;
+    }
+</style>
+
