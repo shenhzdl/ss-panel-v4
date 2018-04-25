@@ -23,6 +23,7 @@
                             </video>
                         </div>
                         <div class="tab-pane" id="android" role="tabpanel" aria-expanded="false">
+                            <span class="badge badge-warning">建议使用手动配置的用户同时观看PC版视频</span>
                             <video src="/assets/media/tutorial_android.Ogg" controls="controls">
                                 您的浏览器不支持H5视频播放。
                             </video>

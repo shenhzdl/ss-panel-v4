@@ -79,7 +79,7 @@
                                             </p>
                                         </li>
                                         <li>
-                                            <p>视频教程<p>
+                                            <p>视频教程（建议使用手动配置的用户同时观看PC版视频）<p>
                                             <video src="/assets/media/tutorial_android.Ogg" controls="controls">
                                                 您的浏览器不支持H5视频播放。
                                             </video>
