@@ -120,7 +120,7 @@
 
 <style>
     video,img{
-        max-width: 32rem;
+        max-width: 80%;
         max-height: 24rem;
         margin: auto;
         clear: both;

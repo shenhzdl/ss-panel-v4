@@ -44,7 +44,7 @@
 
 <style>
     video{
-        max-width: 48rem;
+        max-width: 80%;
         max-height: 36rem;
         margin: auto;
         clear: both;
