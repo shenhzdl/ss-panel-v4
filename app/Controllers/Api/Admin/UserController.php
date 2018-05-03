@@ -28,6 +28,7 @@ class UserController extends BaseController
         else
         {
             $traffic = User::where('email','like','%'.$keyword.'%')
+                ->orWhere('user_name','like','%'.$keyword.'%')
                 ->orderBy('expire_time', 'asc')
                 ->paginate(15, [
                     '*',
