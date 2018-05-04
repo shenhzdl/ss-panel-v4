@@ -5,7 +5,7 @@ namespace App\Providers;
 
 use Pongtan\Contracts\ServiceProviderInterface;
 use App\Contracts\MailService;
-use App\Services\Mail\Mailgun;
+use App\Services\Mail\SendGrid;
 
 class MailServiceProvider implements ServiceProviderInterface
 {
@@ -13,7 +13,8 @@ class MailServiceProvider implements ServiceProviderInterface
     {
         app()->singleton(MailService::class, function ($app) {
             // @todo
-            return new Mailgun();
+            //return new Mailgun();
+            return new SendGrid();
         });
     }
 

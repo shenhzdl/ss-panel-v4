@@ -76,4 +76,10 @@
 
 ### 欢迎打赏
 
-![二维码](http://img.myshuju.net/qrcode/qrcodes.png)
+![二维码](/public/assets/img/dscode.png)
+
+
+### 找回密码更改
+
+- 原作者使用的是Mailgun，不过持续使用Mailgun需要国际信用卡，考虑到部分人没有，又不想用国内的服务，选用了SendGrid，如果要改回Mailgun更改app/Providers/MailSrviceProvider中的register即可
+- SendGrid参数设置使用原Mailgun设置部分，请求网址可随便填
