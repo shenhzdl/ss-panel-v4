@@ -38,7 +38,9 @@ class TokenController extends BaseController implements AuthCode,Cfg
         $rememberMe = $request->getParam('remember_me');
         $this->logger->debug($email . Hash::passwordHash($passwd));
         // Handle Login
-        $user = User::where('email', '=', $email)->first();
+        $user = User::where('email', '=', $email)
+            ->orWhere('user_name', '=', $email)
+            ->first();
 
         if ($user == null) {
             return $this->echoJson($response, [
