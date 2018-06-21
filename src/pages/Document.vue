@@ -88,6 +88,42 @@
                                 </div>
                             </li>
                             <li>
+                                <h3 class="uk-accordion-title">游戏加速器使用手册</h3>
+                                <div class="uk-accordion-content">
+                                    <p>看本手册之前请务必看PC端使用手册，游戏加速功能需要额外开启，仅限正式用户使用，试用用户不予开启，有需要的请微信联系。</p>
+                                    <p>游戏加速的软件作者已经停止对软件的支持，不会增加新游戏和新游戏服务器的支持，部分游戏加速效果可能比不上专业网游加速器。</p>
+                                    <ul>
+                                        <li>
+                                            <p>第一步，下载客户端。
+                                                <a href="/client/SSTap-beta-setup-1.1.0.1.zip">下载</a>，下载之后解压安装，注意安装过程中会安装虚拟网卡驱动，需要点安装，出现的询问全部点同意，安装完成后打开显示如图。
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc10.png"/>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>接下来点击加号，选择“添加一个SS/SSR代理”，之后填入相关参数，参数与PC端配置一致。
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc11.png"/>
+                                            </p>
+                                            <p>配置好之后点击测试按钮，要TCP和UDP全部通过才可使用，延迟超过100ms游戏会有明显的卡顿感。
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc12.png"/>
+                                            </p>
+                                            <p>测试通过之后选择相应的游戏，点击链接即可。如果列表中没有该游戏或者游戏对应的服务器，则可以选择“不代理中国IP”
+                                                <br/>
+                                                <img alt="image" src="/assets/img/doc13.png"/>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>视频教程（建议同时观看PC版视频）<p>
+                                            <video src="/assets/media/tutorial_game.Ogg" controls="controls">
+                                                您的浏览器不支持H5视频播放。
+                                            </video>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
                                 <h3 class="uk-accordion-title">ShadowsocksR下载</h3>
                                 <div class="uk-accordion-content">
                                     <p>Windwos客户端：<a class="uk-link-muted" href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases/download/4.9.0/ShadowsocksR-win-4.9.0.zip">下载</a></p>
@@ -108,6 +144,14 @@
                                         或者
                                         <a class="uk-link-muted" href="/client/shadowsocks--universal-4.5.6.apk">下载APK</a>
                                     </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h3 class="uk-accordion-title">游戏加速器下载</h3>
+                                <div class="uk-accordion-content">
+                                    <p>Windwos客户端：<a class="uk-link-muted" href="/client/SSTap-beta-setup-1.1.0.1.zip">下载</a></p>
+                                    <p>MacOS客户端：<a class="uk-link-muted" href="#">无下载资源</a></p>
+                                    <p>Android客户端：<a class="uk-link-muted" href="#">无下载资源</a></p>
                                 </div>
                             </li>
                         </ul>

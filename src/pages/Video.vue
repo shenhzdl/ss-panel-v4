@@ -5,12 +5,17 @@
                 <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" data-background-color="orange">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#pc" role="tab" aria-expanded="true">
-                            {{ $t("nav.tutorial-video") }}-PC
+                            {{ $t("nav.tutorial-video") }}-电脑
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#android" role="tab" aria-expanded="false">
-                            {{ $t("nav.tutorial-video") }}-Android
+                            {{ $t("nav.tutorial-video") }}-安卓
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#game" role="tab" aria-expanded="false">
+                            {{ $t("nav.tutorial-video") }}-游戏加速器
                         </a>
                     </li>
                 </ul>
@@ -25,6 +30,12 @@
                         <div class="tab-pane" id="android" role="tabpanel" aria-expanded="false">
                             <span class="badge badge-warning">建议使用手动配置的用户同时观看PC版视频</span>
                             <video src="/assets/media/tutorial_android.Ogg" controls="controls">
+                                您的浏览器不支持H5视频播放。
+                            </video>
+                        </div>
+                        <div class="tab-pane" id="game" role="tabpanel" aria-expanded="false">
+                            <span class="badge badge-warning">建议同时观看PC版视频</span>
+                            <video src="/assets/media/tutorial_game.Ogg" controls="controls">
                                 您的浏览器不支持H5视频播放。
                             </video>
                         </div>
