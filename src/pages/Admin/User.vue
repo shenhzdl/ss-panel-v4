@@ -25,6 +25,7 @@
                                     <th>#</th>
                                     <th>{{$t("user-info.user-name")}}</th>
                                     <th>{{$t("user-info.email")}}</th>
+                                    <th>{{$t("user-info.port")}}</th>
                                     <!-- <th>{{$t("user-info.transfer-upload")}}</th> -->
                                     <th>{{$t("user-info.transfer-used")}}</th>
                                     <th>{{$t("user-info.transfer-enable")}}</th>
@@ -38,6 +39,7 @@
                                     <td>#{{c.id}}</td>
                                     <td>{{c.user_name}}</td>
                                     <td>{{c.email}}</td>
+                                    <td>{{c.port}}</td>
                                     <!-- <td>{{bytesToSize(c.u)}}</td> -->
                                     <td>{{bytesToSize(c.d + c.u)}}</td>
                                     <td>{{bytesToSize(c.transfer_enable)}}</td>
