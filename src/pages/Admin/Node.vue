@@ -34,7 +34,7 @@
                                 <td>{{node.name}}</td>
                                 <td>{{node.server}}</td>
                                 <td>{{node.traffic_rate}}</td>
-                                <td> <div class="uk-margin">
+                                <td> <div>
                                     <button class="uk-button uk-button-danger" @click="deleteNode(node.id)">
                                         {{$t("admin.delete")}}
                                     </button>

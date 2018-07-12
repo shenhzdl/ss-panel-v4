@@ -75,7 +75,7 @@ class UserController extends BaseController implements AuthCode,Cfg
         $traffic = TrafficLog::where('user_id', $args['id'])
             ->join('ss_node', 'user_traffic_log.node_id', '=', 'ss_node.id')
             ->orderBy('user_traffic_log.id', 'desc')
-            ->paginate(15, [
+            ->paginate(30, [
                 'user_traffic_log.*',
                 'ss_node.name as name'
             ], 'page', $pageNum);
@@ -168,7 +168,7 @@ class UserController extends BaseController implements AuthCode,Cfg
         }
         $traffic = InviteCode::where('user_id', $args['id'])
             ->orderBy('ss_invite_code.id', 'desc')
-            ->paginate(15, [
+            ->paginate(30, [
                 'ss_invite_code.*',
             ], 'page', $pageNum);
         $traffic->setPath('/api/users/' . $args['id'] . '/inviteCodes');

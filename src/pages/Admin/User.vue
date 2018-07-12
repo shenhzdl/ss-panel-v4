@@ -47,7 +47,7 @@
                                     <td><input class="uk-checkbox" type="checkbox" v-model="c.enable" v-on:click="setone(c)"></td>
                                     <!-- <td>{{c.reg_ip}}</td> -->
                                     <td> 
-                                        <div class="uk-margin">
+                                        <div>
                                             <router-link tag="span" :to="{ name: 'orderadd',params:{user_id:c.id }}" exact>
                                                 <button class="uk-button uk-button-primary">
                                                     {{$t("admin.add-order")}}

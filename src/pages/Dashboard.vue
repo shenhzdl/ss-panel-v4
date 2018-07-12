@@ -12,7 +12,7 @@
                     <div>
                         <div class="uk-card uk-card-default uk-card-body">
                             <span class="statistics-text">软件下载</span><br/>
-                            <div>翻墙：<a href="/client/Shadowsocks-4.0.9.zip">电脑版</a>/<a href="/client/shadowsocks--universal-4.5.6.apk">安卓版</a></div>
+                            <div>翻墙：<a href="/client/Shadowsocks-4.0.10.zip">电脑版</a>/<a href="/client/shadowsocks--universal-4.6.1.apk">安卓版</a></div>
                             <div><a href="/client/SSTap-beta-setup-1.1.0.1.zip">游戏加速器</a></div>
                             <div><a href="/document">使用手册</a></div>
                         </div>

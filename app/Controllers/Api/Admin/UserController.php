@@ -21,7 +21,7 @@ class UserController extends BaseController
         if(True == empty($keyword))
         {
             $traffic = User::orderBy('expire_time', 'asc')
-                ->paginate(15, [
+                ->paginate(30, [
                     '*',
                 ], 'page', $pageNum);
         }
@@ -30,7 +30,7 @@ class UserController extends BaseController
             $traffic = User::where('email','like','%'.$keyword.'%')
                 ->orWhere('user_name','like','%'.$keyword.'%')
                 ->orderBy('expire_time', 'asc')
-                ->paginate(15, [
+                ->paginate(30, [
                     '*',
                 ], 'page', $pageNum);
         }

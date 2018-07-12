@@ -18,7 +18,7 @@ class OrderController extends BaseController
             $pageNum = $req->getQueryParams()['page'];
         }
         $traffic = Order::orderBy('id', 'desc')
-            ->paginate(15, [
+            ->paginate(30, [
                 '*',
             ], 'page', $pageNum);
         $traffic->setPath('/api/admin/orders');

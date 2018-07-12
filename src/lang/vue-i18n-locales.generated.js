@@ -63,7 +63,6 @@ export default {
             "something-wrong": "Some Wrong!",
             "system-error": "System Error",
             "setting": "Setting",
-            "document":"Document",
             "update": "Update",
             "never": "Never",
             "search": "Search",
@@ -133,6 +132,7 @@ export default {
         "user-nav": {
             "dashboard": "Dashboard",
             "user-home": "User Center",
+            "document":"Document",
             "node-list": "Node List",
             "my-profile": "My Profile",
             "traffic-log": "Traffic Log",

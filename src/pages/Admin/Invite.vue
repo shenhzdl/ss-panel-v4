@@ -30,7 +30,7 @@
                             <tr v-for="c in data.data">
                                 <td>#{{c.id}}</td>
                                 <td>{{c.code}}</td>
-                                <td> <div class="uk-margin">
+                                <td> <div>
                                     <button class="uk-button uk-button-danger" @click="deleteCode(c.id)">
                                         {{$t("admin.delete")}}
                                     </button>

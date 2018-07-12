@@ -18,7 +18,7 @@ class InviteController extends BaseController
         if (isset($request->getQueryParams()['page'])) {
             $pageNum = $request->getQueryParams()['page'];
         }
-        $traffic = InviteCode::paginate(15, [
+        $traffic = InviteCode::paginate(30, [
             '*',
         ], 'page', $pageNum);
         $traffic->setPath('/api/admin/invites');
