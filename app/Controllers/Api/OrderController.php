@@ -38,15 +38,15 @@ class OrderController extends BaseController
         {
             $expire_time = strtotime('+'.$renew.' month',$user->expire_time);
         }
-        $user->transfer_enable = $user->transfer_enable + $renew * 20*1000*1000*1000;
+        $user->transfer_enable = $user->transfer_enable + $renew * 30*1024*1024*1024;
         $user->expire_time = $expire_time;
         if($renew >= 1)
         {
             $user->enable = 1;
         }
-        if($renew >= 3)
+        if($renew == 12)
         {
-            $user->invite_num = $user->invite_num + floor($renew/3);
+            $user->invite_num = $user->invite_num + 1;
         }
         $user->save();
         $order->user_id = $id;

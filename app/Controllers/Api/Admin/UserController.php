@@ -77,7 +77,7 @@ class UserController extends BaseController
     {
         $id = $request->getParam('user_id');
         $user = User::find($id);
-        $user->addTraffic(20);
+        $user->addTraffic(30);
         return $this->echoJsonWithData($response, []);
     }
 }

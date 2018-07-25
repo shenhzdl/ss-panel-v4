@@ -52,12 +52,12 @@ class OrderController extends BaseController
         {
             $expire_time = strtotime('+'.$arr['renew'].' month',$user->expire_time);
         }
-        $user->transfer_enable = $user->transfer_enable + $arr['renew'] * 20*1000*1000*1000;
+        $user->transfer_enable = $user->transfer_enable + $arr['renew'] * 30*1024*1024*1024;
         $user->expire_time = $expire_time;
         $user->enable = 1;
-        if($arr['renew'] >= 3)
+        if($arr['renew'] == 12)
         {
-            $user->invite_num = $user->invite_num + floor($arr['renew']/3);
+            $user->invite_num = $user->invite_num + 1;
         }
         $user->save();
         return $this->saveModel($res, new Order(), $arr);

@@ -161,7 +161,12 @@ class TokenController extends BaseController implements AuthCode,Cfg
 
         if ($user->save()) {
             $c->delete();
-
+            //邀请人获得时间和流量
+            $i_user = User::find($user->ref_by);
+            if(!$i_user->is_admin)
+            {
+                $i_user.addTraffic(30);
+            }
             $ttl = config('auth.session_timeout');
             $token = Factory::getTokenStorage()->store($user, $ttl);
             $this->logger->info(sprintf("login user %d token: %s  ttl:  %d", $user->id, $token->getAccessToken(), $ttl));

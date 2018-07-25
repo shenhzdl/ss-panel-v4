@@ -11,6 +11,10 @@
                 <a href="/auth/register"
                    class="btn btn-primary btn-lg btn-round" v-if="!$store.state.isLogin">{{ $t("auth.register") }}</a>
             </router-link>
+            <router-link :to="{ name: 'login' }" exact>
+                <a href="/auth/login"
+                   class="btn btn-primary btn-lg btn-round" v-if="!$store.state.isLogin">{{ $t("auth.login") }}</a>
+            </router-link>
 
         </div>
     </div>

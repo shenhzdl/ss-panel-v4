@@ -25,7 +25,7 @@
                         </div>
                         <div class="uk-margin">
                             <span class="uk-label uk-label-primary uk-text-bold">注</span>
-                            <span class="uk-text-muted uk-text-middle">支付宝扫码后输入订单号充值，一次性充值超过三个月每三个月送一个邀请码</span>
+                            <span class="uk-text-muted uk-text-middle">支付宝扫码后输入订单号充值，年费用户可获赠邀请码，邀请注册成功可获赠30G流量</span>
                         </div>
                         <div class="uk-margin">
                             <div class="uk-form-controls">
