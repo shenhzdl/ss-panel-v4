@@ -11,10 +11,10 @@
                 <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-4@m">
                     <div>
                         <div class="uk-card uk-card-default uk-card-body">
-                            <span class="statistics-text">软件下载</span><br/>
-                            <div>翻墙：<a href="/client/Shadowsocks-4.0.10.zip">电脑版</a>/<a href="/client/shadowsocks--universal-4.6.1.apk">安卓版</a></div>
-                            <div><a href="/client/SSTap-beta-setup-1.1.0.1.zip">游戏加速器</a></div>
-                            <div><a href="/document">使用手册</a></div>
+                            <span class="statistics-text">{{$t("nav.download")}}</span><br/>
+                            <div>{{$t("user-index.over-gfw")}}：<a href="/client/Shadowsocks-4.1.1.zip">Windows</a>/<a href="/client/shadowsocks--universal-4.6.1.apk">Android</a>/<a href="/client/ShadowsocksX-NG.1.7.1.zip">Mac</a></div>
+                            <div><a href="/client/SSTap-beta-setup-1.1.0.1.exe">{{$t("user-index.game-accelerator")}}</a></div>
+                            <div><a href="/document">{{$t("user-nav.document")}}</a></div>
                         </div>
                     </div>
                     <div>
@@ -68,11 +68,15 @@
                                 <p>
                                     {{$t("user-info.expire-time")}}: 
                                     <em>{{timeFormat($store.state.user.data.expire_time)}}</em>
-                                    <router-link :to="{ name: 'recharge'}" exact>
+                                    <!-- <router-link :to="{ name: 'recharge'}" exact>
                                         <button class="uk-margin-left uk-button uk-button-primary">
                                             {{$t("user-index.recharge")}}
                                         </button>
-                                    </router-link>
+                                    </router-link> -->
+                                    <!--支付宝充值功能暂时出问题了，下面是临时的-->
+                                    <a href="/">
+                                        <button class="uk-margin-left uk-button uk-button-primary">{{$t("user-index.wechat-recharge")}}</button>
+                                    </a>
                                 </p>
                             </div>
                         </div>

@@ -17,7 +17,7 @@
                                     <ul>
                                         <li>
                                             <p>第一步，下载客户端。
-                                                <a href="/client/Shadowsocks-4.0.10.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
+                                                <a href="/client/Shadowsocks-4.1.1.zip">下载</a>，下载之后解压到到自己指定的文件夹。双击点开Shadowsocks.exe，出现如下界面：
                                                 <br/>
                                                 <img alt="image" src="/assets/img/doc1.png"/>
                                             </p>
@@ -134,8 +134,8 @@
                             <li>
                                 <h3 class="uk-accordion-title">原版Shadowsocks下载</h3>
                                 <div class="uk-accordion-content">
-                                    <p>Windwos客户端：<a class="uk-link-muted" href="/client/Shadowsocks-4.0.10.zip">下载</a></p>
-                                    <p>MacOS客户端：<a class="uk-link-muted" href="https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v1.7.0/ShadowsocksX-NG.1.7.0.zip">下载</a></p>
+                                    <p>Windwos客户端：<a class="uk-link-muted" href="/client/Shadowsocks-4.1.1.zip">下载</a></p>
+                                    <p>MacOS客户端：<a class="uk-link-muted" href="/client/ShadowsocksX-NG.1.7.1.zip">下载</a></p>
                                     <p>
                                         Android客户端：
                                         <a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks" rel="nofollow">
@@ -149,7 +149,7 @@
                             <li>
                                 <h3 class="uk-accordion-title">游戏加速器下载</h3>
                                 <div class="uk-accordion-content">
-                                    <p>Windwos客户端：<a class="uk-link-muted" href="/client/SSTap-beta-setup-1.1.0.1.zip">下载</a></p>
+                                    <p>Windwos客户端：<a class="uk-link-muted" href="/client/SSTap-beta-setup-1.1.0.1.exe">下载</a></p>
                                     <p>MacOS客户端：<a class="uk-link-muted" href="#">无下载资源</a></p>
                                     <p>Android客户端：<a class="uk-link-muted" href="#">无下载资源</a></p>
                                 </div>

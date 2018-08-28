@@ -127,7 +127,10 @@ export default {
             "traffic-unused": "Unused Traffic",
             "connection-info": "Connection Info",
             "last-used": "Last used at",
-            "gen-invite-code": "Generate invitation code"
+            "gen-invite-code": "Generate invitation code",
+            "wechat-recharge":"WeChat to Recharge",
+            "game-accelerator":"Game Accelerator",
+            "over-gfw":"Over GFW"
         },
         "user-nav": {
             "dashboard": "Dashboard",
@@ -298,7 +301,10 @@ export default {
             "traffic-unused": "剩余流量",
             "connection-info": "链接信息",
             "last-used": "上次使用于",
-            "gen-invite-code": "生成邀请码"
+            "gen-invite-code": "生成邀请码",
+            "wechat-recharge":"微信联系充值",
+            "game-accelerator":"游戏加速器",
+            "over-gfw":"翻墙"
         },
         "user-nav": {
             "dashboard": "控制面板",
