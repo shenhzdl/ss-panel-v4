@@ -10,39 +10,33 @@
             <div class="uk-container uk-container-large">
                 <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-1@m uk-child-width-1-2@xl">
                     <div class="uk-card uk-card-default uk-card-body">
-                        <div class="uk-margin">
-                            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                                <div>
-                                    <img src="/assets/img/zfbqrcode10.jpg" width="200" alt="">
-                                </div>
-                                <div>
-                                    <img src="/assets/img/zfbqrcode30.jpg" width="200" alt="">
-                                </div>
-                                <div>
-                                    <img src="/assets/img/zfbqrcode100.jpg" width="200" alt="">
-                                </div>
-                            </div>
+                        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                            <label><input class="uk-radio" value="0" v-model="monthIndex" type="radio"> {{months[0].text}}</label>
+                            <label><input class="uk-radio" value="1" v-model="monthIndex" type="radio" checked> {{months[1].text}}</label>
+                            <label><input class="uk-radio" value="2" v-model="monthIndex" type="radio"> {{months[2].text}}</label>
                         </div>
                         <div class="uk-margin">
-                            <span class="uk-label uk-label-primary uk-text-bold">注</span>
-                            <span class="uk-text-muted uk-text-middle">支付宝扫码后输入订单号充值，年费用户可获赠邀请码，邀请注册成功可获赠30G流量</span>
+                            <span class="uk-label uk-label-primary uk-text-bold">{{$t("user-index.note")}}</span>
+                            <span class="uk-text-muted uk-text-middle">{{$t("user-index.recharge-info")}}</span>
                         </div>
                         <div class="uk-margin">
-                            <div class="uk-form-controls">
-                                <input class="uk-input uk-width-1-2" v-bind:placeholder="$t('order.tradeno')" id="form-horizontal-text" type="text"
-                                       v-model="tradeno">
-                                <button class="uk-button uk-button-primary" @click="recharge">
+                            <button class="uk-button uk-button-primary" @click="getQrCode">
                                     {{$t("user-index.recharge")}}
-                                </button>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="modal-qrcode" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">{{$t("user-index.recharge") + "-" +months[monthIndex].text}}</h2>
+            <p style="text-align:center">
+                <img v-if="isqrload" v-bind:src="qrcodeurl" v-bind:alt="$t('user-index.qrcode')">
+                <span v-else uk-spinner="ratio: 4.5"></span>
+            </p>
+        </div>
     </div>
-
-
 </template>
 
 <script>
@@ -54,23 +48,26 @@
         components: {},
         data () {
             return {
+                months:[{text:'一个月',value:1},{text:'三个月',value:3},{text:'一年',value:12}],
+                monthIndex:1,
                 tradeno: '',
+                qrcodeurl:'/assets/img/zfberror.jpg',
+                isqrload:false
             }
         },
         methods:{
-            recharge(){
-                rest.post('recharge',{
-                    tradeno:this.tradeno
-                })
+            getQrCode(){
+                this.isqrload = false;
+                var that = this;
+                setTimeout(function(){
+                    that.qrcodeurl = '/assets/img/zfbtimeout.jpg'
+                },3*60*1000);
+                
+                rest.get('getQrCode?month=' + this.months[this.monthIndex].value)
                 .then(response=>{
-                    if(response.data.data.success)
+                    if(response.data.data.filename != '')
                     {
-                        UIkit.notification({
-                            message: this.$t('base.success'),
-                            status: 'primary',
-                            pos: 'top-center',
-                            timeout: 5000
-                        });
+                        that.qrcodeurl = '/assets/img/' + response.data.data.filename + '.jpg';
                     }
                     else
                     {
@@ -81,6 +78,7 @@
                             timeout: 5000
                         });
                     }
+                    that.isqrload = true;
                     
                 })
                 .catch(err=>{
@@ -90,8 +88,11 @@
                         pos: 'top-center',
                         timeout: 5000
                     });
+                    that.isqrload = true;
                 });
-            }
+                var modal =UIkit.modal('#modal-qrcode');
+                modal.show();
+            },
         }
     }
 </script>

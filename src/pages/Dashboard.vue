@@ -68,15 +68,15 @@
                                 <p>
                                     {{$t("user-info.expire-time")}}: 
                                     <em>{{timeFormat($store.state.user.data.expire_time)}}</em>
-                                    <!-- <router-link :to="{ name: 'recharge'}" exact>
+                                    <router-link :to="{ name: 'recharge'}" exact>
                                         <button class="uk-margin-left uk-button uk-button-primary">
                                             {{$t("user-index.recharge")}}
                                         </button>
-                                    </router-link> -->
+                                    </router-link>
                                     <!--支付宝充值功能暂时出问题了，下面是临时的-->
-                                    <a href="/">
+                                    <!-- <a href="/">
                                         <button class="uk-margin-left uk-button uk-button-primary">{{$t("user-index.wechat-recharge")}}</button>
-                                    </a>
+                                    </a> -->
                                 </p>
                             </div>
                         </div>

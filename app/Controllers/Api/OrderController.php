@@ -8,26 +8,62 @@ use Slim\Http\Response;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\AppKey;
+use App\Services\AliPayCode;
 use App\Controllers\BaseController;
 
 class OrderController extends BaseController
 {
-    public function update(Request $req, Response $res, $args)
+
+    public function getQrcode(Request $req, Response $res, $args)
     {
         $id = $args['id'];
-        $tradeno = $req->getParam('tradeno');
-        $order = Order::where('tradeno','=',$tradeno)
-            ->where(function($query){
-                $query->where('user_id','=','0');
-            })
-            ->first();
-        if($order == null)
+        $month = $req->getQueryParams()['month'];
+        $month = (int)$month;
+        $code = new AliPayCode();
+        $fileName = $code->get($month,$id);
+        if($fileName == '')
+        {
+            $fileName = 'error';
+        }
+        return $this->echoJsonWithData($res, [
+            'filename' => 'zfb'.$fileName
+        ]);
+    }
+
+    public function store(Request $req, Response $res, $args)
+    {
+        $input = file_get_contents("php://input");
+        $arr = json_decode($input, true);
+        $keypara = $arr['appkey'];
+        $keydata = Appkey::find(1)['appkey'];
+        if( $keypara != $keydata)
         {
             return $this->echoJsonWithData($res, [
                 'success' => false
             ]);
         }
-        $renew = $order->renew;
+        $amount = floatval($arr['amount']);
+        $renew  = 0;
+        switch ($amount) {
+            case 10.00:
+            case 9.99:
+            case 10.01:
+                $renew = 1;
+                break;
+            case 30.00:
+            case 29.99:
+            case 30.01:
+                $renew = 3;
+                break;
+            case 100.00:
+            case 99.99:
+            case 100.01:
+                $renew = 12;
+                break;
+        }
+        //处理用户
+        $code = new AliPayCode();
+        $id = $code->getUserID($amount);
         $user = User::find($id);
         $nowt = time();
         if($nowt > $user->expire_time)
@@ -49,57 +85,13 @@ class OrderController extends BaseController
             $user->invite_num = $user->invite_num + 1;
         }
         $user->save();
+        //处理订单
+        $order = new Order();
         $order->user_id = $id;
+        $order->amount = $amount;
+        $order->tradeno = $arr['alipaytradeno'];
+        $order->datetime = strtotime($arr['datetime']);
         $order->save();
-        return $this->echoJsonWithData($res, [
-            'success' => true
-        ]);
-    }
-
-    private function saveModel(Response $response, Order $node, $arr)
-    {
-        foreach ($arr as $k => $v) {
-            $node->$k = $v;
-        }
-        $node->save();
-        return $this->echoJsonWithData($response, $node);
-    }
-
-    public function store(Request $req, Response $res, $args)
-    {
-        $input = file_get_contents("php://input");
-        $arr = json_decode($input, true);
-        
-        $keypara = $arr['appkey'];
-        $keydata = Appkey::find(1)['appkey'];
-        if( $keypara != $keydata)
-        {
-            return $this->echoJsonWithData($res, [
-                'success' => false
-            ]);
-        }
-        //不要名称和appkey
-        unset($arr['name']);
-        unset($arr['appkey']);
-        $arr['datetime'] =  strtotime($arr['datetime']);
-        $arr['method'] = '支付宝';
-        switch ($arr['amount']) {
-            case '10.0':
-                $arr['renew'] = 1;
-                break;
-            case '30.0':
-                $arr['renew'] = 3;
-                break;
-            case '50.0':
-                $arr['renew'] = 6;
-                break;
-            case '100.0':
-                $arr['renew'] = 12;
-                break;
-            default:
-                $arr['renew'] = 0;
-                break;
-        }
-        return $this->saveModel($res, new Order(), $arr);
+        return $this->echoJsonWithData($res, $order);
     }
 }

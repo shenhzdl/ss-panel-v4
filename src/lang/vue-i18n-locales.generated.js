@@ -117,6 +117,8 @@ export default {
             "faq": "FAQ",
             "checkin": "Check-In",
             "recharge": "Recharge",
+            "note":"Note",
+            "recharge-info":"Scan QrCode and pay by Alipay,it will transferred in 2 minutes,otherwise contact via WeChat",
             "checkin-des": "You can checkin in each %s hour.",
             "cant-checkin": "Cant't Check-In",
             "last-checkin-at": "Last check-in at",
@@ -130,7 +132,8 @@ export default {
             "gen-invite-code": "Generate invitation code",
             "wechat-recharge":"WeChat to Recharge",
             "game-accelerator":"Game Accelerator",
-            "over-gfw":"Over GFW"
+            "over-gfw":"Over GFW",
+            "qrcode":"QrCode"
         },
         "user-nav": {
             "dashboard": "Dashboard",
@@ -291,6 +294,8 @@ export default {
             "faq": "常见问题",
             "checkin": "签到",
             "recharge": "充值",
+            "note":"注",
+            "recharge-info":"支付宝扫码支付后两分钟内到账，如没到请微信联系站长",
             "checkin-des": "每 %s 小时可以签到一次。",
             "cant-checkin": "无法签到",
             "last-checkin-at": "上次签到时间",
@@ -304,7 +309,8 @@ export default {
             "gen-invite-code": "生成邀请码",
             "wechat-recharge":"微信联系充值",
             "game-accelerator":"游戏加速器",
-            "over-gfw":"翻墙"
+            "over-gfw":"翻墙",
+            "qrcode":"二维码"
         },
         "user-nav": {
             "dashboard": "控制面板",
