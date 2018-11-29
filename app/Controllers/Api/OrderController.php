@@ -39,7 +39,17 @@ class OrderController extends BaseController
         if( $keypara != $keydata)
         {
             return $this->echoJsonWithData($res, [
-                'success' => false
+                'success' => false,
+                'message' => '验证失败'
+            ]);
+        }
+        $tradeno = $arr['alipaytradeno'];
+        $c_order = Order::where('tradeno', $tradeno )->first();
+        if($c_order!= null)
+        {
+            return $this->echoJsonWithData($res, [
+                'success' => false,
+                'message' => '订单号已存在'
             ]);
         }
         $amount = floatval($arr['amount']);
@@ -89,7 +99,7 @@ class OrderController extends BaseController
         $order = new Order();
         $order->user_id = $id;
         $order->amount = $amount;
-        $order->tradeno = $arr['alipaytradeno'];
+        $order->tradeno = $tradeno;
         $order->datetime = strtotime($arr['datetime']);
         $order->save();
         return $this->echoJsonWithData($res, $order);
