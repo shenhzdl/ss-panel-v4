@@ -99,6 +99,7 @@ class OrderController extends BaseController
         $order = new Order();
         $order->user_id = $id;
         $order->amount = $amount;
+        $order->renew = $renew;
         $order->tradeno = $tradeno;
         $order->datetime = strtotime($arr['datetime']);
         $order->save();
