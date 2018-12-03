@@ -52,15 +52,27 @@
                 monthIndex:1,
                 tradeno: '',
                 qrcodeurl:'/assets/img/zfberror.jpg',
-                isqrload:false
+                isqrload:false,
+                checkTask:null,
+                modal:null
             }
         },
         methods:{
             getQrCode(){
                 this.isqrload = false;
+                if(this.checkTask != null)
+                {
+                    clearInterval(this.checkTask);
+                    this.checkTask = null;
+                }
                 var that = this;
                 setTimeout(function(){
                     that.qrcodeurl = '/assets/img/zfbtimeout.jpg'
+                    if(that.checkTask != null)
+                    {
+                        clearInterval(that.checkTask);
+                        that.checkTask = null;
+                    }
                 },3*60*1000);
                 
                 rest.get('getQrCode?month=' + this.months[this.monthIndex].value)
@@ -68,6 +80,7 @@
                     if(response.data.data.filename != '')
                     {
                         that.qrcodeurl = '/assets/img/' + response.data.data.filename + '.jpg';
+                        that.checkTask = setInterval(that.checkPayed,10*1000);
                     }
                     else
                     {
@@ -79,7 +92,6 @@
                         });
                     }
                     that.isqrload = true;
-                    
                 })
                 .catch(err=>{
                     UIkit.notification({
@@ -90,9 +102,29 @@
                     });
                     that.isqrload = true;
                 });
-                var modal =UIkit.modal('#modal-qrcode');
-                modal.show();
+                this.modal =UIkit.modal('#modal-qrcode');
+                this.modal.show();
             },
+            checkPayed()
+            {
+                var that = this;
+                rest.get('isPayed').then(response=>{
+                    if(response.data.data.success)
+                    {
+                        UIkit.notification({
+                            message: this.$t('base.success'),
+                            status: 'primary',
+                            pos: 'top-center',
+                            timeout: 5000
+                        });
+                        clearInterval(that.checkTask);
+                        if(that.modal != null)
+                        {
+                            that.modal.hide();
+                        }
+                    }
+                })
+            }
         }
     }
 </script>

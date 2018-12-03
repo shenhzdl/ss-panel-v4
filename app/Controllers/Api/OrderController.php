@@ -30,6 +30,24 @@ class OrderController extends BaseController
         ]);
     }
 
+    public function isPayed(Request $req, Response $res, $args)
+    {
+        $id = $args['id'];
+        $code = new AliPayCode();
+        if($code->isOrderExist($id))
+        {
+            return $this->echoJsonWithData($res, [
+                'success' => true
+            ]);
+        }
+        else
+        {
+            return $this->echoJsonWithData($res, [
+                'success' => false
+            ]);
+        }
+    }
+
     public function store(Request $req, Response $res, $args)
     {
         $input = file_get_contents("php://input");
@@ -74,6 +92,12 @@ class OrderController extends BaseController
         //处理用户
         $code = new AliPayCode();
         $id = $code->getUserID($amount);
+        if ($id == null) {
+            return $this->echoJsonWithData($res, [
+                'success' => false,
+                'message' => '找不到用户ID'
+            ]);
+        }
         $user = User::find($id);
         $nowt = time();
         if($nowt > $user->expire_time)

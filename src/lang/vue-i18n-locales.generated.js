@@ -295,7 +295,7 @@ export default {
             "checkin": "签到",
             "recharge": "充值",
             "note":"注",
-            "recharge-info":"支付宝扫码支付后两分钟内到账，如没到请微信联系站长",
+            "recharge-info":"支付宝扫码支付后两分钟内到账,请手动刷新查看，如没到请微信联系站长",
             "checkin-des": "每 %s 小时可以签到一次。",
             "cant-checkin": "无法签到",
             "last-checkin-at": "上次签到时间",

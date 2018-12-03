@@ -12,7 +12,8 @@ class AliPayCode
     private $redis;
 
 
-    private $keyPrefix = 'code_index_';
+    private $codeKeyPrefix = 'code_index_';
+    private $orderkeyPrefix = 'user_id_';
 
     public function __construct()
     {
@@ -39,7 +40,7 @@ class AliPayCode
         }
         if ($indexs != null) {
             for ($i=0; $i < count($indexs); $i++) { 
-                $key = $this->keyPrefix.$indexs[$i];
+                $key = $this->codeKeyPrefix.$indexs[$i];
                 if($this->redis->exists($key))
                 {
                     if ($this->redis->get($key) == $uid) {
@@ -57,36 +58,50 @@ class AliPayCode
         return '';
     }
 
+    public function isOrderExist($userid)
+    {
+        $key = $this->orderkeyPrefix.(string)$userid;
+        if($this->redis->exists($key))
+        {
+            $this->redis->del($key);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public function getUserID($amount)
     {
         $key = '';
         switch ($amount) {
             case 10:
-                $key = $this->keyPrefix.$this->mo_indexs[0];
+                $key = $this->codeKeyPrefix.$this->mo_indexs[0];
                 break;
             case 9.99:
-                $key = $this->keyPrefix.$this->mo_indexs[1];
+                $key = $this->codeKeyPrefix.$this->mo_indexs[1];
                 break;
             case 10.01:
-                $key = $this->keyPrefix.$this->mo_indexs[2];
+                $key = $this->codeKeyPrefix.$this->mo_indexs[2];
                 break;
             case 30:
-                $key = $this->keyPrefix.$this->qu_indexs[0];
+                $key = $this->codeKeyPrefix.$this->qu_indexs[0];
                 break;
             case 29.99:
-                $key = $this->keyPrefix.$this->qu_indexs[1];
+                $key = $this->codeKeyPrefix.$this->qu_indexs[1];
                 break;
             case 30.01:
-                $key = $this->keyPrefix.$this->qu_indexs[2];
+                $key = $this->codeKeyPrefix.$this->qu_indexs[2];
                 break;
             case 100:
-                $key = $this->keyPrefix.$this->ye_indexs[0];
+                $key = $this->codeKeyPrefix.$this->ye_indexs[0];
                 break;
             case 99.99:
-                $key = $this->keyPrefix.$this->ye_indexs[1];
+                $key = $this->codeKeyPrefix.$this->ye_indexs[1];
                 break;
             case 100.01:
-                $key = $this->keyPrefix.$this->ye_indexs[2];
+                $key = $this->codeKeyPrefix.$this->ye_indexs[2];
                 break;
         }
         if($key == '')
@@ -99,6 +114,7 @@ class AliPayCode
             {
                 $uid = $this->redis->get($key);
                 $this->redis->del($key);
+                $this->redis->setex($this->orderkeyPrefix.(string)$uid,180,$amount);
                 return $uid;
             }
         }
