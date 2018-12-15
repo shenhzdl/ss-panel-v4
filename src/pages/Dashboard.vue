@@ -12,7 +12,7 @@
                     <div>
                         <div class="uk-card uk-card-default uk-card-body">
                             <span class="statistics-text">{{$t("nav.download")}}</span><br/>
-                            <div>{{$t("user-index.over-gfw")}}：<a href="/client/Shadowsocks-4.1.1.zip">Windows</a>/<a href="/client/shadowsocks--universal-4.6.1.apk">Android</a>/<a href="/client/ShadowsocksX-NG.1.7.1.zip">Mac</a></div>
+                            <div>{{$t("user-index.over-gfw")}}：<a href="/client/Shadowsocks-4.1.3.1.zip">Windows</a>/<a href="/client/shadowsocks--universal-4.6.2.apk">Android</a>/<a href="/client/ShadowsocksX-NG.app.1.8.2.zip">Mac</a></div>
                             <div><a href="/client/SSTap-beta-setup-1.1.0.1.exe">{{$t("user-index.game-accelerator")}}</a></div>
                             <div><a href="/document">{{$t("user-nav.document")}}</a></div>
                         </div>
