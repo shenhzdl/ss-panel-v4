@@ -8,6 +8,7 @@ use Slim\Http\Response;
 use App\Models\InviteCode;
 use App\Utils\Check;
 use App\Utils\Http;
+use App\Models\User;
 use Exception;
 use Swagger;
 
@@ -18,6 +19,17 @@ class HomeController extends BaseController
 {
     public function index()
     {
+        //只要有人访问就刷新
+        $users = User::where('expire_time','<',time())
+            ->where(function($query){
+                $query->where('enable','=','1');
+            })
+            ->get();
+        foreach($users as $user)
+        {
+            $user->enable = 0;
+            $user->save();
+        }
         return $this->view('index');
     }
 
