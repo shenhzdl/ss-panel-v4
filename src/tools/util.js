@@ -23,6 +23,8 @@ export const getLang = function () {
     switch (lang) {
         case 'zh-CN':
             return 'zh_cn';
+        case 'zh-Hans-CN':
+            return 'zh_cn';
         default:
             return 'en';
     }

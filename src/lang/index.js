@@ -1,8 +1,8 @@
 import lang from './vue-i18n-locales.generated'
 
 export const langs = {
-    en: "🇺🇸English",
-    zh_cn: "🇨🇳简体中文",
+    en: "English",
+    zh_cn: "简体中文",
 };
 
 export  const Locales = {
